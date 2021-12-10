@@ -182,3 +182,13 @@ Finally, push your computer code to the internet(github)
 git push origin main
 
 
+Git Bash Code:
+cd /c/users/(yourusername)/desktop/
+mkdir /c/users/(yourusername/desktop/(yourfoldername)
+git clone "https://github.com...whatever your repo link is from github.com"
+cd /c/users/(yourusername)/desktop/(yourfoldername)/(yourreponame)
+git status
+touch myFile.txt
+git add
+git commit -m'this is my awesome commit'
+git push origin main
