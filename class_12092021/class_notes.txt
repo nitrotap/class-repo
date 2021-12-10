@@ -1,0 +1,184 @@
+Student Success Manager (SSM)
+sdale@bootcampspot.com
+    - Expect a 2 day turnaround time
+    - Hours: M-Thurs 10am-8pm
+    - In communications, include "coding bootcamp with instructor Nathan"
+    - In emergency, use slack to message Instructor Nathan.
+
+Notes on class:
+    - Always keep yourself muted
+    - Stay on video
+    - Keep your name in Zoom as your first and last name
+
+Meet your teachers
+Instructor Nathan - likes raspberry pi
+    uses one-clap to refocus class
+        counts down from 3 - everyone "clap" at the same time to refocus cohort
+    thumbs up, thumbs down
+    fist-or-five - rating system for activities
+        to engage and figure out where everyone is
+
+    
+
+Daniel Vitelli (TA) - likes cats
+Natnael Seifu (TA) - TA
+Brock Ehnert (TA)
+
+Breakout Rooms - 4 questions:
+    fun thing
+live anywhere
+music
+mexican food
+
+"for working professionals"
+    only 2 virtual classes per week
+    support from instructional staff on weekends and nights
+    curriculum built around common scenarios real world
+
+Make sure your families know you are going through - it's going to be tough and you'll need some help to get through it
+
+Boot Camp Life
+1. Online lessons
+2. Live support - classes, office hours, study halls
+3. Weekly Challenges
+    3 group projects
+        add to porffolio
+
+New Module separate from Pre-Work.
+
+Tips for success   
+    take advantage of office hours
+    form study groups  
+    make a schedule
+
+1 tutoring session per week
+    Have specific questions after having tried it on our own
+
+office hours sat from 12-2pm
+        tues/thurs (missed times)
+        link from bootcampspot calendar
+        use office hours for questions and set up
+
+
+class requirements
+    miss no more than 8
+    no more than 2 incomplete Challenges assignments
+        if third is missing - then you have to pick one that day and talk to instructor 
+    participate in all class projects
+    tuition paid in full
+
+policies
+    go to bootcamp spot to get to class office hours
+    Question: are office hours mandatory? NO
+
+make career stuff important - complete resume and have it reviewed 
+
+email tickets to support@bootcampspot.com
+    any issues with module work - anything with not authorized to do it
+    include that you're in this class
+
+add/drop date
+    Thursday December 16th
+    email Shannon Dale - sdale@bootcampspot.com
+    what if does NOT matter - 
+        obligated to enrollment agreement which stands after first week of class
+
+successful students:
+    show up for classes
+    show up for office hours
+    what am i going to do by taking this course
+    what am i not going to be able to do by taking this course
+    "just show up"
+    connect with other students! 
+    questions: speak up at any time! 
+
+
+
+Slack Set-up
+    add social links to social-links (github, linkedin)
+    add apps - AskBCS Learning Assistant - one of the most useful things in the class
+    applications we will be using 
+    please use threads when conversing about a particular topic
+    everyone in the industry uses slack for something (90%)
+    slack backtick - like apostrophe - 3 will block code
+        2 will create a variable
+    /snippet - create a snippet
+    screenshots - 
+        for mac 
+            command + shift + 4
+            ctrl command shift 4 (to clipboard)
+
+VSCode - integrated development environment
+    prettier - code formatter
+    format on save 
+    file > auto save (make sure its checked)
+
+
+gitlab vs github  
+    course content on gitlab
+    github - post repos for assignments
+    repo (repository) - folder to host a project
+    git is source control software
+    git (a disagreeable ornery person)
+
+heroku - host apps for free
+
+github - create repo  
+    add readme
+    add gitignore to 
+
+github bash
+    pwd - where i am
+    ls - list the folders, where i can go
+    mkdir make directory
+    cd change directory (cd .. is parent directory)
+    open
+    touch - create file
+    rm - remove file
+
+    GitHub Clone
+    go to code then clone repo
+        git clone "https://github......"
+
+using and interacting with Git from terminal
+    git status
+    git add . 
+    git commit -m'this is my awesome commit'
+    git push origin main
+
+
+Setting up your first GitHub repo:
+On github.com create a new repo, give it a name like my_first_repo. add a readme and a gitignore if you want.
+On the repo page, click Code and copy the https link
+
+On Windows, open up Git Bash. Sorry don't have a mac.
+
+Code to set up your github repo:
+First, figure out where you want to save the repo - I'm using my desktop
+cd /c/users/(yourusername)/desktop/
+
+Second, make the new folder for your coding folder
+mkdir /c/users/(yourusername/desktop/(yourfoldername)
+
+Third, clone your github repo into your coding folder by going to Github.com 
+git clone "https://github.com...whatever your repo link is from github.com"
+
+Fourth, change your working directory to your cloned repo folder
+cd /c/users/(yourusername)/desktop/(yourfoldername)/(yourreponame)
+
+Fifth, check the status of the git
+git status
+
+Next, add a file (a change to the version control)
+touch myFile.txt
+
+Then, add the changes to the version control
+git add
+
+Afterwards, "commit" the changes to the version control with a comment (what you did)
+git commit -m'I created an empty file as a demonstration'
+
+Finally, push your computer code to the internet(github)
+git push origin main
+
+
