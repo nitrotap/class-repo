@@ -1,0 +1,223 @@
+Module 1: HTML, CSS, and Git
+
+For 5-10 minutes, write about 2-3 personal values and why they matter to you.
+
+Take 5 minutes to write about how these personal values relate to take the bootcamp.
+
+
+Assignment Schedule
+Class 1 (December 14): Lessons 1 and 2
+Class 2 (December 16): Lessons 3,4,5
+    Be sure to download files before class!
+Challenge Assignment #1: Sunday Dec 26
+ 
+
+Module Project: Run Buddy
+
+GitHub Pages:
+    GitHub pages is a really easy way to make webpages from your GitHub repository
+
+
+touch - create file
+
+1.1.3: Get started with command line / Set up Project
+
+Git Code:
+cd desktop/username/desktop/folder
+mkdir Module-1
+cd Module-1
+mkdir projects
+cd projects
+mkdir run-Buddy
+cd run-Buddy
+
+touch hello.txt
+touch index.html
+
+1.1.4: Add html
+Don't worry about how you do on the assessments
+ASCII does not have emoji's - UTF-8 does
+
+1.1.5 Intro Git
+In Git Bash, go to the code where you made the run-buddy folder. make sure 'pwd' returns the fodler correctly
+
+git init - creates repo, initializes version control
+git status - says what's changed, checks version control status
+git add index.html - adds file to version control, stage the changes to the git
+git status
+git commit -m'your comment here.' - takes everything and 'commits'
+
+git log - history of commits
+
+
+1.1.6 HTML Outline
+
+<div> - container element
+    lots of divs - "div soup"
+    HTML5 introduces <header> but if there isn't a "semantic element" availale you can fall back to <div>
+        **<header> is different than <head> 
+            <header> is semantic element
+            <head> is html mandatory element
+    HTML introduces "semantic elements" like <h1> and <footer> to break up the <div> soup
+        if you can't find the right "semantic element" you can use <div>
+    
+
+Sketch out the webpage should be the first thing you do before writing any HTML code
+There's no difference between a <div> element and a <section>
+hidden code is designated by <!-- your comment -->
+
+1.1.7 Saving Git Progress
+
+touch .gitignore - create file specify file types we do not want to track
+touch DS_Store
+git add . - add files from current directory or 
+    git add -A (entire project)
+
+git commit -m 'added gitignore and html outline'
+
+1.1.8 Using GitHub Pages
+create a new repo in GitHub
+link to local project by 
+    on github website click the green Code button
+    copy/paste HTTPS or SSH key
+
+
+git remote add origin git@github.com:username/run-buddy.git
+git remote -v
+
+go to settings in your online github repo and click on it (skipping this part bc i dont want some random page on my github)
+find pages in the left hand column and click
+
+End 1.1
+----------------------------------------------------------
+Start 1.2
+
+1.2.3 Adding Header Content
+
+Branding - adding <h1> to <header>
+
+Navigation
+    <nav> - semantic element
+
+Lists <li> 
+    ordered lists - <ol>
+    unordered lists - <ul>
+
+Attributes
+    keywords that can be required for certain tags
+    used to provide identity, function, and context to elements
+
+1.2.4 CSS Basics
+
+body { 
+    color: #39a2b2;
+    font-family: Times New Roman, Roboto, sans-serif;
+}
+
+body is the selector
+font-family is the property name
+; is the declaration terminator
+Times New Roman, Roboto, sans-serif is the property value
+
+property: property-value is akin to font-family: Helvetica
+
+the entire block within {} is the css rule
+
+link css file in <head> of html file
+<link rel="stylesheet" href="./assets/css/style.css" />
+
+Inline Style Attributes
+    <h1 style="color: blue; font-size: 100px;">RUN BUDDY</h1>   
+    add attribute by including the style= with the property values
+
+Style Attributes in <head> HTML element
+just add css rule within <style>
+  <style>
+    body {
+      background-color: tomato;
+    }h1 {
+  font-size: 110px;
+}  </style>
+
+External vs Inline Styling
+    External CSS is:
+        more flexible
+        easier to change
+        looks cleaner
+        share styles across multiple html files
+
+Separation of Concerns (software engineering design principle)
+    Keep code with separate functions in different files or classes
+
+1.2.5 Setting up Style Sheet
+create /assets/css/styles.css using touch
+<link rel="stylesheet" href="./assets/css/style.css">
+
+1.2.6 CSS styles
+start with writing styles that apply to the whole page
+child elements (like <h1>) will receive the styles of their parent elements eg. <body>
+
+Comments in CSS are denoted by /* text */
+
+CSS Box Model
+Parent>child
+Margin encases Border encases Padding encases Content
+
+1.2.7 Detailed CSS styles
+CSS cascade is an algorithm that the browser uses to decide which css styles to apply
+The Cascade has 3 factors:
+    Importance:
+        !important at the end of a property declaration will override any conflicting style declarations
+    Specificity:
+        CSS will apply styles to the most specific definition it can find
+    Source Order:
+        CSS is read top-down; the last defined style will be used.
+
+* means Universal Selector
+
+End 1.2
+-----------------------------------------------------------
+Start 1.3
+
+1.3.3 Hero Image
+Hero Image - a large banner placed prominently at the top of a page
+
+Accessibility: Headings should fall in sequential order to help 
+    screen readers interpret relative importance of content on the page
+
+Call To Action (CTA) (Software Engineering Design Principle)
+    a sign-up for is a type of CTA
+    CTAs encourage the user to do something (turn site visitors into sales leads)
+
+Forms <form> - a semantic HTML element
+    <label> - semantic element for telling user what to enter and linking to associated input
+        this link enhances accessibility by allowing users to click on the label's text as well as radio buttons
+            provides more clickable surface area
+    <input> - semantic element for user input
+        type="email" for email
+        type="tel" for phone number
+    type="radio" for radio button
+        radio button elements must have the same name="" property to be associated with the same radio group
+        to select only 1 radio button in a group, they must have the same name
+        "for" attribute is used for the radio button's label and identity
+        Simple Radio Button Example:
+            <input type="radio" name="radio-button-group" id="button-yes" />
+            <label for="button-yes">Yes</label>
+            <input type="radio" name="radio-button-group" id="button-no" />
+            <label for="button-no">No</label>
+    type="checkbox" for checkbox
+        Accessibility: Make sure to wrap content of entire checkbox into <p> to make the entire space clickable
+        <label for="checkboxlabel">Label Text</label>
+        <input type="checkbox" name="checkbox-name" id="checkboxlabel" />
+    Button
+        <button type="submit">Button Text</button>
+
+Don't put any empty lines within parent/child relationships 
+
+Block elements are displayed on a new line.
+Inline elements are NOT displayed on a new line.
+
+1.3.4 Hero Element Style
+
+
+
