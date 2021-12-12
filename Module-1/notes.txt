@@ -215,9 +215,70 @@ Forms <form> - a semantic HTML element
 Don't put any empty lines within parent/child relationships 
 
 Block elements are displayed on a new line.
+Block elements match the width of their parent.
 Inline elements are NOT displayed on a new line.
+Inline elements wrap their content. They take up as much space as they need.
 
 1.3.4 Hero Element Style
+Dot Notation tells the browser we are using a CSS class
 
+1.3.5 Element Positioning
+Within a CSS class, the position property can set with:
+    static - default value; not affected by top, bottom, left, right
+    relative - uses top/bottom to vertically offset and left/right to horizontally offset
+        - absolute positioning of a child element relative to the parent container
+    absolute - removes element and offsets relative to parent element margins
+        - The element is positioned relative to its first positioned (not static) ancestor element	
+    fixed - fixes element to a spot in the browser window (like freeze panes but for webpages)
+    others: sticky, inherit, initial
+
+the box-sizing element changes the values for both width and height
+to position a child element in relation to its parent element, use the relative position property
+
+1.3.6 Style the Sign up Form
+practice doesn't make perfect - it makes developers
+
+1.4.3 Filling HTML
+Dummy Text - type lorem then press tab
+
+1.4.4 Icon Images
+SVG (Scalable Vector Graphics)
+    can accomodate any screen size without losing quality
+    graphics will scale
+    perfect for icons and logos
+
+The alt Attributes 
+    Accessibility: every image must have an alt attribute
+    alt explains the content and context of images to search engines and screen readers
+    decorative images should set the attribute to empty so the screen reader skips it
+        alt=""
+
+Make sure to check your job's style guide for subjective decisions
+
+1.4.5 Styling centering block element
+the 'inline-block' value will wrap the content but padding, etc will act like block elements
+    couple with text-align 
+
+margin: 0 auto;  
+    - centering a block element with  a width of less than 100%
+    - set top/bottom margins at 0 and auto calc right/left
+    - does not center vertically
+
+1.4.6 Style what-we-do section
+keep all CSS rules for each section together
+
+Don't Repeat Yourself (Software Engineering Design Principle)
+    "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system"
+    a change in any single element does not require a change in logically unrelated elements
+
+text-align: center will center anything inside an element
+    if you want to center an image, apply text-align to the parent element, not the image itself
+
+the purpose of the alt attribute is to provide context for the image
+you can add more than one class to an element by adding a space between class names
+margin: 0 auto lets you center a width of less than 100%
+
+
+1.5.3 HTML Setup for trainers
 
 
