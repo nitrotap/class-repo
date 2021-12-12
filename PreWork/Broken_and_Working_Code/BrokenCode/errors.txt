@@ -1,0 +1,33 @@
+Noting Errors for BooTheDog.html
+
+indentation errors throughout the page
+
+missing tags Errors
+    <p> in bio
+    <h1> in header
+    <img> in picture
+
+incorrect or missing quotations
+incorrect button pointers, ordering
+
+
+wrong code is logic.js - 
+    click attribute should be quoted
+    strings in array need quotes after each element
+    incorrect attribute parameters
+    
+
+wrong ordering of elements on the page
+incorrect indentations
+missing list tags
+incorrect linking to javascript 
+
+
+
+comparisons list
+18 wrong indentation
+19 missing header tags
+22 wrong indentation
+23 wrong indent
+24 wrong indent
+25 wrong indent

@@ -1,0 +1,44 @@
+body {
+    background-color: white; /*change background to white*/
+  }
+
+  h1 {
+    color: black; /*change to black*/
+    text-align: center; /*center align*/
+  }
+
+  h2, h3, p {
+    color: black;
+  }
+
+  p, li {
+    font-size: 12px; /*change to 12px from 24*/
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .styledFont {
+    color:green;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .almond {
+    color: black;
+  }
+
+  .butterfinger {
+    color: orange;
+  }
+
+  .ferrero {
+    color: gold;
+  }
+
+  .all {
+    color: blue;
+  }
+
+  .styledImage {
+      border-width: 10px;
+      border-color: orange;
+      border-style: solid;
+  }
