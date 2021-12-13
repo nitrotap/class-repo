@@ -1,3 +1,3 @@
-# test_repo
-"this is my repo created in class"
+# UMN Coding Bootcamp Repo
+
 Class notes for UMN Coding Bootcamp (December 2021-June 2022)
