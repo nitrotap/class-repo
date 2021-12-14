@@ -366,9 +366,45 @@ line-height - shrink or expand text
 <iframe> needs caution for copyright infringement and security risks from bad sites
 vertical-align: top; aligns an element to the top of its container
 
+End 1.6 
+------------------------------------------------------------------------------
+Start 1.7
 
+1.7.4 Setting up more html files
+Scaffolding for html:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Webpage Title</title>
+  </head>
+  <body>
+  </body>
+</html>
 
+Webpage Titles
+    structure: [page-title] - [site title]
+    60 characters or less (seo cuts off at 60)
 
+Set of HTML code is called a component
+
+Best practice for <a> element is to disable if you are on the same page as it's link for performance reasons
+Best practice is to set up html and styles to be reused across sections
+
+1.7.6 Secondary styles
+Seperate style sheets are useful when it makes sense for organization or styles or if there are multiple developers handling different parts of the site
+
+1.7.7 Secondary Style Sheet
+You can add mutiple stylesheets to the <head> element and the browser will use the LAST one 
+    you dont need to re-add all the styles - just link the earlier sheet above the override linked stylesheet
+<link rel="stylesheet" href="./assets/css/style.css" />
+<link rel="stylesheet" href="./assets/css/secondary-styles.css" />
+
+the secondary style sheet will override any values from the first. but the rest of the values from the first get carried over
+
+1.7.8 New styles
+the <head> element contains info for the browser to interact with
+the <body> element contains all the info for the user to interact with
 
 
 
