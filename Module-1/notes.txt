@@ -231,12 +231,17 @@ Within a CSS class, the position property can set with:
         - The element is positioned relative to its first positioned (not static) ancestor element	
     fixed - fixes element to a spot in the browser window (like freeze panes but for webpages)
     others: sticky, inherit, initial
+    also see - float
 
 the box-sizing element changes the values for both width and height
 to position a child element in relation to its parent element, use the relative position property
 
 1.3.6 Style the Sign up Form
 practice doesn't make perfect - it makes developers
+
+End 1.3
+---------------------------------------------------
+Start 1.4
 
 1.4.3 Filling HTML
 Dummy Text - type lorem then press tab
@@ -278,7 +283,93 @@ the purpose of the alt attribute is to provide context for the image
 you can add more than one class to an element by adding a space between class names
 margin: 0 auto lets you center a width of less than 100%
 
+End 1.4
+-----------------------------------------------------
+Start 1.5
 
-1.5.3 HTML Setup for trainers
+float
+    places an element in the right side or left side of its container
+    allowing text and line elements to wrap around it
+    Still remaining a part of the flow of the page (in contrast to absolute positioning)
+
+1.5.4 Build Trainer HTML
+The alt image value
+    simple image - an image that serves as content to the page
+    alt guidelines  (Accessibility)
+        - describe the image in less than 140 characters
+        - convey purpose and content of the image
+        - should not have "image of" or "graph of" since screen readers do that already
+
+1.5.5 Add CSS to Trainer
+shorthand for margin-top, margin-right, margin-bottom, margin-left is 
+    margin: top, right, bottom, left
+        - clockwise
+        - also works with padding
+    
+overflow
+    sets the desired behavior for an element's overflow
+    if text is too big for text box, what to do with that text
+    allows parent element to physically contain its child elements 
+
+"block formatting context" 
+    a part of the CSS rendering of a web page. 
+    a "region" where the layout of block boxes and floats interact with other elements
+    (auto; visible;hidden;scroll)
+
+inheritance - when a child element's style is defined by its parent element
+
+Utility classes
+    CSS classes that contain only ONE rules
+    used for applying a single property declaration to multiple html elements
+    add the class to the <element> to <div x class="">
+
+Fonts - Windows & macOS
+    Windows replaces Helvetica with Arial
+    Arial uses weight: normal instead of weight: lighter
+    It will look different on macOS
+
+End 1.5
+------------------------------------------------------------
+Start 1.6
+
+1.6.5 Adding final classes
+iframe
+    inline frame - nests an html page into the current page
+    large size length/width attributes can help make controls visible
+    old HTML uses frameborder, new HTML uses border  
+    be CAREFUL - copyright and hacked sites
+
+<br /> - line break. can also use <p>
+
+<address> - address element (Accessibility)
+    contact info for owner of article
+    physical address
+
+1.6.6 Contact info
+Principle of Single Responsibility (CS Design Engineering Principle)
+    every module, class, or function should have responsiblity over a single part of that program's functionality and it should encapsulate that part
+    split up html and CSS into different files. external css rules are overriden by internal html elements
+
+type selector - matches elements by node name - no "."
+type-selector {
+    property: "property-value"
+}
+
+class selector - selects elements with a specific class attribute
+.class-selector {
+    property: "property-value"
+}
+
+1.6.7 Two column layout
+To add two divs into two columns, nest them into a larger div and have that set to display: inline-block;
+line-height - shrink or expand text
+<iframe> needs caution for copyright infringement and security risks from bad sites
+vertical-align: top; aligns an element to the top of its container
+
+
+
+
+
+
 
 
