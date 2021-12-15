@@ -436,13 +436,13 @@ Scrum TODO
 Challenge mode Acceptance Criteria
 
 All links are functioning correctly
-rework css by consolidating css selectors and properties
-    organizing them fo follow the semantic structure of html elements
+rework css by consolidating css selectors and properties (lots of duplicate CSS rules)
+    organizing them to follow the semantic structure of html elements
 include comments before each element or section of the page
 
 semantic html elements (proper tags for headings, sections & alt attributes)
 elements follow a logical structure independent of styling and positioning
-image elements have proper alt attributes
+image elements have proper alt attributes (complete)
 heading attributes are in sequential order
 title element has concise, descriptive title????
 
@@ -472,6 +472,9 @@ The URL of the GitHub repository that contains your code.
 
 
 
+Questions:
+    section versus div
+    alt attributes, decoration or not?
 
 
 
