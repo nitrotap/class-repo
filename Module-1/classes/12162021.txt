@@ -1,0 +1,71 @@
+tutors have different hours for holidays
+
+recordings on bootcampspot - zoom
+    https://courses.bootcampspot.com/courses/1041/pages/1-getting-ready-for-class?module_item_id=408706
+
+supplemental this week is professional portfolio
+
+section vs div
+    section does what its supposed to do: 
+        generic tags, div and span
+
+module is work we do as we go along; 
+challenge is the assignment - the test/homework
+    challenge needs to be deployed (mandatory)
+    due the date it says its due (January 2) for challenge 1
+    look at canvas for source of truth for when things are due
+
+three ways to select/manipulate class 
+    within the html element
+    within the header
+    external css file
+
+when writing css, how to target elements in the css
+    class, id, element
+    #id, .class-name, element(name of element), * (wildcard) - select all elements
+
+selector syntax is a way to query the html page and apply the style
+
+emmet cheatsheet - VS Code extension
+    div.class super-classy
+    https://devhints.io/emmet
+    boilerplate code makes html files, etc
+    p.mytext*6>lorem
+        makes 6 p tags each with class my text and populated with placeholder text
+        lorem ipsum (cisero wrote treatise on stoicism, argues that no one suffers on purpose, some reason you are suffering)
+
+
+
+Trouble - top right bottom left (clockwise) for margin/padding elements
+chrome-devtools - you can manipulate the box model by using the sandbox by clicking on the values in the box model shown in chrome
+
+margin: if there are 2 values, its top bottom
+
+
+FOR HW:
+    github pages NEEDS index.html at root 
+    empty out the contents of the develop folder and make the repo from that
+    every challenge gets its own github repo/give it a unique name (what they do not week1 or week2)
+    host source code in github/githubpages/heroku. submit link to url. (or videos)
+    dont forget the readme!!
+    Tutor/ASKBCSpot is there to help you with the assignment 
+        come in with questions about the challenge - only 1 hour
+
+    
+
+
+
+
+
+
+
+Pseudo classes
+The : pseudo allow the selection of elements based on state information that is not contained in the document tree. Example: a:visited will match all <a> elements that have been visited by the user.
+
+Pseudo elements
+The :: pseudo represent entities that are not included in HTML. Example: p::first-line will match the first line of all <p> elements.
+
+
+
+git remote add origin url
+
