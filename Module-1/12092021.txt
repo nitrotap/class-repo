@@ -257,6 +257,16 @@ The alt Attributes
     alt explains the content and context of images to search engines and screen readers
     decorative images should set the attribute to empty so the screen reader skips it
         alt=""
+    Good alt text:
+        describe the image as specifically as possible
+        under 125 characters
+        use keywords, but avoid keyword stuffing
+        don't use images as text
+        don't include image of, picture of
+        buttons should have an alt attribute that describes the function of the button
+        use longdesc="" and put the description in a separate resource or within the text of the page containing the image
+
+
 
 Make sure to check your job's style guide for subjective decisions
 
@@ -405,6 +415,70 @@ the secondary style sheet will override any values from the first. but the rest 
 1.7.8 New styles
 the <head> element contains info for the browser to interact with
 the <body> element contains all the info for the user to interact with
+
+
+Challenge Module #1: HTML CSS Git Challenge: Code Refactor
+ODD Challenges: feature request challenges. start with starter code
+EVEN Challenges: no starter code. job seeking or take-home assignments
+
+Agile Software Development
+    agile (make it up as you go) vs waterfall (make it up before you start; live with the consequences)
+    testing is done in every iteration
+    Software development lifecycle support
+        concept creation>requirements specification>Design>Code>Unit Test>Integration Test>System test>Acceptance test>System in use
+
+Scrum TODO
+
+
+
+
+
+Challenge mode Acceptance Criteria
+
+All links are functioning correctly
+rework css by consolidating css selectors and properties (lots of duplicate CSS rules)
+    organizing them to follow the semantic structure of html elements
+include comments before each element or section of the page
+
+semantic html elements (proper tags for headings, sections & alt attributes)
+elements follow a logical structure independent of styling and positioning
+image elements have proper alt attributes (complete)
+heading attributes are in sequential order
+title element has concise, descriptive title????
+
+Grading requirements
+links all function correctly
+CSS selectors and properties are consolidated and organized to follow semantic structure
+CSS file is properly commented
+
+Deployed at live URL
+load with no errors
+github url submitted
+    github repository that contains the application code
+
+Resembles 90% of the screenshots in the challenge instructions
+
+Repository has a unique name.
+Repository follows best practices for file structure and naming conventions.
+Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+Repository contains multiple descriptive commit messages.
+Repository contains quality README file with description, screenshot, and link to deployed application.
+
+SUBMIT:
+The URL of the deployed application.
+The URL of the GitHub repository that contains your code. 
+    Give the repository a unique name and include a README file that describes the project.
+
+
+
+
+Questions:
+    section versus div
+    alt attributes, decoration or not?
+
+
+
+
 
 
 
