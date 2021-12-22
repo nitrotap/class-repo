@@ -1,0 +1,234 @@
+Module 2 Notes
+
+2.1 Using GitHub
+flexbox, css grid, media queries
+woop: wish, outcome, obstacle, plan
+DO NOT edit code on github
+don't forget to add changes when seeing main|merging in git bash
+
+New Branch:
+git checkout -b newbranch
+
+Branches:
+    feature - write and test code for a feature (individually, locally)
+    develop - staging environment, 
+        - test new code first to check for bugs from feature branch before going to production
+    production - code is made available to users and public
+
+Git is the industry standard 
+
+
+2.1 TODO skipping for now since i already know git
+
+
+2.1.9 feature branch
+
+git checkout develop
+git checkout -b feature/hero-text
+
+
+2.4 flexbox
+Flexible Box Layout Module
+add display: flex;
+to change from row to column, set flex-direction: column;
+
+justify-content property applies to elements with display: flex;
+    flex-start - left justify
+    flex-end - right justify
+    center -  as close to center as possible
+    space-between - evenly spaced flush against edges
+    space-around - evenly spaced not flush against edges
+
+flex-wrap: wrap; tells the container to let child elements break onto the next line, use
+
+align-items like justify-content but on y axis
+
+changing flex-direction flips how align-items and justify-content work
+
+list-style changes the list bullet points and positioning (none hides bullet points)
+
+font-size: 1.55vw; | vw stands for viewport width
+    viewport is browser window size
+    1.55 is 1.55% of browser's overall width
+
+wireframing - sketching an outline of a page's layout
+
+***
+more practical to create classes that you put into the HTML tag
+instead of adding property values in each CSS rule
+
+CSS Classes in HTML tag is better than property values in each CSS rule
+
+Some HTML elements, like <img>, can be unreliable when it comes to sizing them 
+Instead of sizing the element itself, a better practice is to wrap the <img> tag
+in a <div> or some other container element and set the image's width property to 
+be 100 percent of its parent container's size.
+
+lots of CSS selectors can slow down a page. so try to strike a balance between using CSS and using HTML
+
+
+flex - apply specific instructions for displaying flexbox child elements on the page in relation to sibling elements
+flex: 1; - share any extra space evenly
+flex: <flex-grow value> <flex-shrink value> <flex-basis value>;
+flex: <flex-grow value> <flex-basis value>;
+flex: <flex-grow value> <flex-shrink value>;
+
+
+card - related HTML content is laid out in a narrow, vertical column
+
+"three column card layout" 
+- one horizontal row that can hold onto three seperate pieces of info
+
+
+select all elements that are direct children of anything with a class of contact-info
+.contact-info > * {  
+  flex: 1;
+  margin: 15px;
+}
+
+
+align-items default property is stretch - all flex children will grow to tallest one
+
+Media queries - ADD TO END OF CSS 
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+  header h1 a {
+    /* this will be applied on any screen smaller than 980px */
+    color: tomato;
+  }
+}
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+  header h1 {
+    /* this will be applied on any screen between 768px and 575px */
+    font-size: 80px;
+  }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+  header h1 {
+    /* this will be applied on any screen smaller than 575px */
+    font-size: 100px;
+  }
+}
+
+
+Adding Shadows:
+    text-shadow
+    box-shadow (for containers like div elements)
+        horizontal, vertical, blur radius, color
+        box-shadow: 1px 2px 3px blue;
+
+
+.some-class {
+  text-shadow: 5px 10px 15px black;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.25);
+}
+
+Rounded Borders:
+border-radius: 15px;
+
+"Sticky" nav element
+position: sticky;
+top: 0;
+    can also use position for iOS Safari
+
+Vendor Prefixes:
+always put the standardized version of a property 
+at the end of a sequence of vendor-prefixed versions
+
+.rounded-corners {
+  -webkit-border-radius: 10px; /* old versions of chrome and safari */
+  -moz-border-radius: 10px; /* old versions of firefox */
+  border-radius: 10px; /* standardized browsers */
+}
+
+
+
+Pseudo-Classes
+/* default state */
+button {
+  background: white;
+}
+
+/* mouse is hovering over button */
+button:hover {
+  background: red;
+}
+
+/* button is in focus because it was the most recently clicked element on the page */
+button:focus {
+  background: green;
+}
+
+/* user is actively pressing the cursor down on the button */
+button:active {
+  background: blue;
+}
+
+Adding Hover Effects
+Add Background color (darker) then add lighter color with focus
+header nav ul li a:hover {
+  background: #fce138;
+  color: #024e76;
+  border-radius: 15px;
+  text-shadow: none;
+}
+
+.hero-form button:hover {
+  background-color: #39a6b2;  
+}
+
+.contact-form button:hover {
+  color: #fce138;
+  background: #39a6b2;
+}
+
+/* update existing rule with this declaration */
+.form-input {
+  background-color: rgba(255,255,255, 0.75);
+}
+
+/* create a new rule for focus state */
+.form-input:focus {
+  background-color: rgba(255,255,255, 1);
+}
+
+combining CSS rules
+.step:not(:last-child) {
+  border-bottom: 1px solid #39a6b2;
+}
+
+.checkbox-wrapper input:checked + label::after, 
+.radio-wrapper input:checked + label::after {
+  content: "";
+}
+
+
+2.5.3 checkboxes/radio buttons
+Setting border-radius to 50% is a quick way to turn an element into a perfectly round circle or oval.
+
+
+
+
+CSS Variables (NOT supported by IE)
+define variables within div with --
+call using var(--your-variable)
+div {
+  --size-small: 12px;
+  --size-big: 50px;
+  font-size: var(--size-small);
+  margin: var(--size-big) var(--size-small);
+}
+
+Adding for entire css sheet involves pseudo-class root at top of style sheet
+:root {
+  --primary-color: #fce138;
+  --secondary-color: #024e76;
+  --tertiary-color: #39a6b2;
+}
+
+In VS Code, you can highlight the first instance of what you're looking for and press Ctrl+D (on Windows) or Command+D (on macOS) to continually select the next instance it finds. With multiple instances selected, you can type and replace them all at once.
+

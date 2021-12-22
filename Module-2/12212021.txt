@@ -1,0 +1,48 @@
+Class Notes
+
+Pascal case : StartsEachWordWithACapitalLetter
+kebab case : splits-up-lower--case-words-with-hyphens
+snake case : seperates_lower_case_words_with_underscores
+camel case : startsEachWordAfterTheFirstWithACapitalLetter
+screaming snake case : SPLITS_UP_ALL_CAPITAL_LETTERS_WITH_HYPHENS  : this is typically used in languages like JS for naming values that will not change
+
+plan ahead and fail fast
+
+This Week: Advanced Class
+
+mobile responsive - mobile devices come in all shapes and sizes - create a singular flow for all screen sizes
+media queries - targeting specific breakpoints for screen size width
+
+UI/UX building apps people want to use, high fidelity prototypes, detailied CSS and javascript
+    (front end web dev)
+
+designs - dribble, awawards, - see something cool online and "bring it to life"
+    used some code someone else provides: cite and credit
+        borrow photos and use them: cite and 
+    design or wireframe layout: using as an inspiration is more emulation vs plagarism
+    but you cant reuse code thats somewhere online
+
+
+wireframe - skeleton of the layout, tools (adobe xd, figma, indesign, slides, diagram.net, photoshop)
+
+semantic html tags - header, content, footer, entry
+    header, nav, section, article, details, aside, footer
+    follow convention of where you work
+
+CSS classes vs IDs
+ - IDs are specific 
+ - classes are for all purpose, reusable styles
+
+
+CSS Flexbox 
+a layout model that allows elements to align and distribute space within a container
+display: flex, block, inline, inline-block, none (useful in dynamic ui (form disappearing))
+used in contrast to float and display properties
+
+flex: wrap; - wrap around the item
+flex-direction: column or row;
+
+align-items (top and bottom) (vertical)
+justify-content (left and right) (horizontal is a longer word)
+
+
