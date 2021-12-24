@@ -1,0 +1,76 @@
+
+class notes
+
+look into figure tag - 
+
+employers use style guides - these are there to help keep things like checkboxes, styles, etc are uniform across enterprise
+    can ask to see style guide when hired
+
+typography can play a huge role in the visual aesthetic and emotional identity of a webpage
+
+font size should be 16px
+line length should be 50-75 characters per line
+
+custom fonts can affect page load speed
+
+mobile browsing is almost 2/3 of the webkit
+    target multiple screens 
+
+
+media query at end of CSS file
+
+@media (max-width: 768px) {
+    .example-class {
+        margin: 0 auto !important;
+    }
+}
+
+
+flex - dynamic property to account for how someone changes the viewport
+    flex: flex-grow flex-shrink flex-basis; / default flex: 2 1 30em;
+    flex-basis: initial main size of flex item, default width property - synonomous with width / can set to percent (20%) to fill the row
+    flex-grow: specifies how much of the remaining space should be assigned to the item
+
+    grow - if more width were to become available, what do i do with this element?
+    flex: 1 1 200px; (share space evenly)
+    flex: 2 1 30em; (2 is twice as big as siblings)
+    flex: 0 0 400px; (fixed width at 400px, as the viewport changes, keep it at 400)
+
+
+media query - printer - prepare a webpage for print
+
+
+pseudo-classes
+    default state>hover state>focus state>active state
+    :pseudo-class is the format to call the class
+
+reset CSS
+    blank slate for your own styles
+
+
+hiding elements in CSS
+.links {
+  display: none;
+}
+
+"when hovering over resource class, display unordered list element
+.resources:hover ul {
+  display: flex;
+  flex-direction: column;
+}
+
+Can't always use JavaScript
+    ebay
+    emails
+
+
+
+CSS Variables
+add variables in root
+:root {
+
+}
+
+
+
+
