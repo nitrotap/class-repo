@@ -1,0 +1,95 @@
+Module 3 notes
+
+creating a function
+function FUNCTION-NAME(String args) {
+    // do the below code
+    window.alert("YOUR STRING")
+}
+
+calling a function
+FUNCTION-NAME();
+
+setting a variable
+var VARIABLE-NAME = "Tony the Robot"
+
+JavaScript has 7 data types 
+    boolean(T/F), null, undefined, number (<= 2^53 - 1), bigint (>= 2^53), string (set of characters) , symbol (key)
+    objects- 
+
+comments in JavaScript 
+    // for single line
+    /* for multiple line */
+
+console.log(YOUR-LOGGED-DATA); - sets up the dom to log anything in the parnethesis
+    Web API - an object, like window, with its own set of functions and properties
+    can see the logged items in chrome devtools
+
+String concatenation
+    just use +
+
+creating a function
+    function declaration - using function keyword
+    function expression - create a function by assigning it to a variable
+
+scoping - "scoping a variable" - creating a new variable with the same name inside a function
+
+variable-to-be-stored = use-actual-value-variable-holds-currently
+
+don't confuse strings containing numbers with the integer data type
+
+state - the data in our application at a specific point in time
+
+conditions - checks on the status of the code
+if (YOUR-CONDITION) {
+    // do this code
+} else if (SECOND-CONDITION) {
+    // do this code instead of the first block
+} else { // no need for a condition since this is the default
+    // do this code instead of the other blocks
+}
+
+control flow - type of statement that sets a variable and uses conditions on the variable
+
+edge cases - situations where the user inputs unexpected data
+
+|| - OR operator
+=== - equals operator
+&& - AND operator
+
+if conditions can be boolean
+    empty string "", null, 0 are false, any other string is true
+
+3.2.3
+Psuedocode - description of steps that an algorithm or application must complete
+
+array in JavaScript
+     - store data as a list
+     - arrayName[position of element - 1]
+     - arrayName[arrayNames.length - 1] will return last element of an array
+     
+primitive data holds only one value (string, number, boolean) vs objects (arrays, etc) that hold more than one value of data
+
+for in JavaScript
+    for([initial expression]; condition; [increment expression]) {
+        statement
+    }
+    for (var i = 0; i < array[index]; i++) {
+        statement
+    }
+    for (starting at 0; going until the index element in the array; going up one by one) {
+        this code will run for every element, starting at 0, going to index specified, one by one;
+    }
+
+while (condition) {
+    statement
+}    
+
+
+
+
+
+
+
+
+
+
