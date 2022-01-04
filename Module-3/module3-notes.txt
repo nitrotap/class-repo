@@ -14,7 +14,6 @@ var VARIABLE-NAME = "Tony the Robot"
 
 JavaScript has 7 data types 
     boolean(T/F), null, undefined, number (<= 2^53 - 1), bigint (>= 2^53), string (set of characters) , symbol (key)
-    objects- 
 
 comments in JavaScript 
     // for single line
@@ -80,9 +79,49 @@ for in JavaScript
         this code will run for every element, starting at 0, going to index specified, one by one;
     }
 
+while in JavaScript
 while (condition) {
     statement
 }    
+
+local scope - refers to a variable that only exists within the scope of a function
+    contrast to global scope - variable that exists globally
+    local variables take precedence over global if the name is same
+TODO: 3.3.3 watch scope video
+
+TODO: 3.4.4 watch video
+
+Math Class
+    - Math.max() - max of given multiple given values
+    - Math.floor() - min of given values
+    - Math.random() - random decimal between 0 and 1 but not including 1 {0,1)
+    - Random number between 40 and 60 - Math.floor(Math.random - 21) + 40
+    - Random number between 0 and 10 - Math.floor(Math.random() * 11)
+
+Random Number Generator Function
+var randomNum = function(min, max) {
+    var value = Math.floor(Math.random() * (max-min + 1) + 1);
+    return value;
+}
+
+Passing by Reference - passing objects into a function where updating a propety also updates the original bject
+
+this - this refers to THIS object 
+    - updating a property with this updates the original object within a function definiion
+
+-= - subtract from variable
++= - add to variable
+
+object properties are accessed via . symbol
+methods are called with ();
+this refers to the parent object
+
+beta testing - sharing software with a small group of peole for feedback and errors
+
+3.5.5 
+Falsy values are values that evaluate to false in a conditional statement.
+In JavaScript, they include 0, null, "", undefined, NaN, and false. 
+This shortcut lets you represent all of these non-valid responses in a single expression. 
 
 
 

@@ -1,0 +1,6 @@
+touch index.html; mkdir assets; cd assets; mkdir css; mkdir js; mkdir images; cd css; touch styles.css; cd..; cd js; touch script.js
+
+
+
+git push origin develop; git checkout origin main; git merge develop; git push origin main
+
