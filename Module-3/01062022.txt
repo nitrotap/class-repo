@@ -1,0 +1,45 @@
+class notes
+
+leetcode / codecalta - gamify code learnings
+
+var/let/const - var is "old school" 
+    - can't go wrong with var
+    - when to use let or const
+        - newer syntax - 
+        - ES6 is a type of "echma" script
+            - a newer type of javascript syntax
+        - var always works, but the newer ones are better to use in certain instances
+            - office hours (bring it up) and he will go over it
+    
+in demo, left aligned the headings - no box just the bottom border
+
+add resume section
+
+pw-generator
+certain level of validation (pw length not provided as number)
+    - must be less than set number of characters
+    - Y/N for special characters
+    - must select at least one character type if none are specified
+
+coding quiz challange - 
+    - timer
+    - score is time left when finishing quiz
+    - answering incorrectly docks you 10 seconds
+    - score ending at 0 
+
+useful array methods:
+    .unshift("item") // adds an element to a beginning of an array
+    .pop() // removes last element of array
+    .concat() // joins arrays and returns a new array
+
+useful String methods:
+    .toUpperCase() // makes all letters capital-toUpperCase
+
+function and function expressions - 
+    - 
+
+single = is ASSIGNMENT statement, returns true
+
+
+
+

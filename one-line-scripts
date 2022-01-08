@@ -4,3 +4,5 @@ touch index.html; mkdir assets; cd assets; mkdir css; mkdir js; mkdir images; cd
 
 git push origin develop; git checkout origin main; git merge develop; git push origin main
 
+
+var randomNum = function (min, max) { var a = Math.floor(Math.random() * (max - min + 1) + min); return a;};

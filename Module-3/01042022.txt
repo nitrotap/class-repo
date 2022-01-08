@@ -1,0 +1,51 @@
+Class Notes
+
+Control Flow and Iteration today
+
+Introduction to Client Side JavaScript - in the browser
+
+Rescue time - wakatime - to track hours in VSCode
+
+
+Challenge assignment
+    checks for number of characters, special, numeric, lowercase, uppercase
+    ouputs the generated password
+
+logical errors or syntax errors are most common
+
+console.log() 
+helpful for debugging in JavaScript
+
+variables
+    - nouns of programming
+    - consist of a name and a value
+    - var-keyword var-name = value;
+    - SINGLE = for assignment statement
+
++ - addition for numbers, concatenation for strings
+negation !
+conjunction &&
+disjunction ||
+
+truth tables - table with logical operators
+a && b returns only true if both are true - otherwise false
+
+a || b returns only false if both are false - otherwise true
+
+usually need to use === instead of ==
+
+control structures - if/else statements
+    if ()
+
+switch cases can be more readable
+
+destructuring - shows expression and its value in console.log
+    console.log({expression1});
+
+arrays - start with index 0
+    - to access an element in an array use array[index]
+
+iteration in JavaScript
+    - for loop - for (index variable; loop condition; iteration(addition)) 
+    - 
+

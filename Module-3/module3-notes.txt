@@ -99,10 +99,10 @@ Math Class
     - Random number between 0 and 10 - Math.floor(Math.random() * 11)
 
 Random Number Generator Function
-var randomNum = function(min, max) {
-    var value = Math.floor(Math.random() * (max-min + 1) + 1);
-    return value;
-}
+var randomNum = function (min, max) {
+  var a = Math.floor(Math.random() * (max - min + 1) + min);
+  return a;
+};
 
 Passing by Reference - passing objects into a function where updating a propety also updates the original bject
 
@@ -125,7 +125,44 @@ This shortcut lets you represent all of these non-valid responses in a single ex
 
 
 
+Character Codes in JavaScript
+    .fromCharCode() method
+    HTML5 Standard is UTF-8 
+    look in the meta part of HTML for the encoding
 
+    UTF-8 Codes
+    0-31 are weird control codes that arent really usable 
+    32 is space
+    33-47, 58-64, 91-96, 123-126 are "special characters" !, ", (),, @, ?, etc
+    48-57 is numbers 0-9
+    58-64 are "special characters" !, ", (),, @, ?, etc
+    65-90 is UPPERCASE letters
+    91-96 are more special characters
+    97-122 are lowercase letters
+    123-126 are special characters
+
+    SUMMARY:
+        33-47, 58-64, 91-96, 123-126 are "special characters" !, ", (),, @, ?, etc
+        48-57 is numbers 0-9
+        65-90 is UPPERCASE letters
+        97-122 are lowercase letters
+
+Code Snippets JS UTF-8
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+Burning Questions: What is the difference between a function and a method?
 
 
 
