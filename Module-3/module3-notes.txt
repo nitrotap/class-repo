@@ -147,24 +147,33 @@ Character Codes in JavaScript
         65-90 is UPPERCASE letters
         97-122 are lowercase letters
 
-Code Snippets JS UTF-8
+Burning Questions: 
+Recursion - 
+    watch the call stack Chrome devTools if you're getting undefined variables 
+    fixed it by assigning the end variable to the Recursion
+        WRONG: setFunction();
+        RIGHT: var settingFunction = setFunction();
+
+What is the difference between a function and a method?
+    - methods are properties of a class or object
 
 
+What is the difference between let and var?
+     - let is only used WITHIN the scope 
+     - mutiple vars will overwrite
+     - mutiple lets will not have an issue
+     - mutiple const will not overwrite first const declaration ("scream at you")
+
+arrays objects and functions - use const
+let and var can almost be used interchangeabely
 
 
-
-
-
-    
-
-
-
-
-
-
-Burning Questions: What is the difference between a function and a method?
-
-
+function calls
+    stack - i am executiing function
+    can only get down a level in the stack by completing a function
+    stackoverflow error - doing it thousands of times
+        - can avoid use while loop
+        - base case - if some condition is met, pick value and return it
 
 
 
