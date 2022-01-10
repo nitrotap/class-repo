@@ -1,0 +1,154 @@
+Module 4 Notes
+
+Application Programming Interface (API)
+    - Programming constructs that abstract away complex code
+
+Kanban board - type of to-do list
+    - orginally used by Toyota
+
+emmet - creates boilerplate code for you
+    - html:5
+
+DOM (Document Object Model)
+    console.dir() displays HTML as DOM element
+    can access properties and methods using dot notation
+    API for HTML documents, organized by DOM node tree (or DOM tree)
+        Document>Root Element>Element>Attribute
+    Use of camelCase marks element as a JavaScript variable
+
+.querySelector("css element")
+    documnt.querySelector("p") - returns FIRST p element in document
+
+if an element will be referenced multiple times, assign it to a variable
+    - mutiple search operations can drain resources
+
+Event - user behaviour, click events
+    event listener - observation of the event
+    event handler - response to the event
+    .addEventListener() - method used by an element object. adds event listener to object accessd using dot notation
+    anonymous function - doesn't have named identifier and can't be called outside the context of the expression
+
+Callback - a function passed as an argument to another function
+
+Timer in JavaScript
+    setInterval - executes the callback repeatedly at a set setInterval (in ms, 1000 ms is 1 second)
+    setTimeout - exectules the callback after a set delay
+
+HTML is a structured text language
+the DOM is a parsed version of HTML - that can be manipulated using JavaScript
+
+
+Dynamically adding HTML elements in JavaScript
+    using a funciton, that creates the new type of element using document.createElement(), setting CSS class and content by accessing the new element with dot notation, and placing it at the end of the list using .appendChild.
+    Finally, adding the on-click event listener to call function when button is clicked
+var createTaskHandler = function () {
+  var listItemEl = document.createElement("li");
+  listItemEl.className = "task-item";
+  listItemEl.textContent = "This is a new task.";
+  tasksToDoEl.appendChild(listItemEl);
+};
+buttonEl.addEventListener("click", createTaskHandler);
+
+.appendChild(element) - add it after any existing textContent
+
+4.2.4
+wrap content of html elements in containrs to help figure out their position on the page
+
+select/option HTML elements
+    select - drop down lists
+    option - choices for drop down list
+
+4.2.5 
+Event Object
+    event interface - JavaScript object to be used in the event handler function
+    event object - 
+        - event object by making the function that's executed by the event have an argument to represent the event object. 
+        - console.log(event); can be used to find the data provided to an event object
+    event.preventDefault(); - browser default behaviour is refresh every time on form submission. to override this we can use event.preventDefault to supress this behaviour
+
+4.2.6
+.querySelector syntax
+    square brackets within selector means selecting at HTML element by one of its attributes
+    .querySelector("htmlEL[attribute='attribute-name']")
+    document.querySelector("input[name='task-name']");
+        - selecting the <input> element that has the name attribute set to "task-name"
+    QUOTES - difference between single and double quotes - if using multiple single quotes or double quotes, the string would fail since it would shorten the double-quotes input incorrectly
+
+getting - reading data from an objects property
+setting - provide and store data in an object's property
+
+innerHTML - write HTML tags inside the string value given
+textContent - displays text but without any html tags - just the text itself
+
+4.2.7
+
+it is possible to pass objects into functions
+
+lexical scoping & dynamic scoping
+    - any variables created within the curly braces of a function only exist within that function's braces
+    - a variable defined outside a function can be accessible inside another function defined after the variable declaration
+    - an item's lexical scope is the place in which the item got created.
+    - Lexical scoping (sometimes known as static scoping ) is a convention used with many programming languages that sets the scope (range of functionality) of a variable so that it may only be called (referenced) from within the block of code in which it is defined
+    - vs dynamic scoping
+        - Dynamic scoping creates variables that can be called from outside the block of code in which they are defined. A variable declared in this fashion is sometimes called a public variable.
+
+form HTML element
+    make sure to add event.preventDefault();
+         - browser default behaviour is refresh every time on form submission. to override this we can use event.preventDefault to supress this behaviour
+    .reset() - only available to forms, resets itself to default values
+    submut event - allows us to submit a form using the button and the enter key
+    to read a form's input data, select the input element directly and read its value property
+
+
+Custom Data attributes - data-*
+    - store custom data in html. usually private to the page or application
+    .setAttribute("property", value)
+
+Any function that you create in the global scope can be accessed by the Chrome DevTools console
+
+4.3.7
+event delegation - pattern to handle events efficiently.
+bubbles - child elements clicked will propogate to parent elements
+    - when an event is triggered by an element, it will first run its handlers on it first then handlers on parents, and soforth.
+    event.stopPropogation(); 
+
+event.target - reports element on which event occurs
+
+matches() - returns T/F NOT element like querySelector()
+    - checking if an element matches certain criteria. 
+    - similar to using the querySelector() method, but it doesn't find and return an element. 
+    - returns true if the element would be returned by a querySelector() with the same argument, and it returns false if it wouldn't.
+
+.task[task-id] - same element
+.task [task-id] - all child elements
+
+any html attribute will be cast to a string when written into HTML
+
+localStorage
+    setItem(keyName, keyValue) - saves data to localStorage - 
+    getItem(keyName) - reads data from localStorage
+    can only store Strings
+    JSON serializer
+        - JSON.stringify()
+        localStorage.setItem("array-name", JSON.stringify(array));
+         - JSON.parse()
+
+
+var saveJSON = function("array-name", array) {
+    localStorage.setItem("array-name", array)
+}
+
+
+Burning Questions:
+What is the difference between an event interface and an event object? 4.2.5
+Would the event object be considered a class?
+
+.querySelector() - what is happening with it? what does it do? how does it work? why do I need to use it? 
+
+lexical scoping - i got three different definitions of it
+
+Difference between xml and html?
+
+
+
+
