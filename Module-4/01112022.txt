@@ -1,0 +1,82 @@
+Class Notes
+
+lexical scoping - when the scope of the variable is determined by the structure of the program, - or static scoping
+dynamic scoping - bound by its most recent assigned value
+
+
+API - application programming interface
+    - all purpose term, toolkit, 
+
+submit a challenge - can always to back to regrade
+    - just absorb main concepts and move on
+    - not perfection, proficiency
+
+have at least started the module before first class on Tuesday
+    - 
+
+Challenge Assignment - quiz app
+    - keeps track of click events, on click, tracks if question is correct or incorrectly
+
+
+window.document (aka the DOM)
+    - an object - the page in a way we can interate with it using JavaScript
+    - nodes are organized in a tree. each element is a node.
+    - with JavaScript, you can maniuplate web pages
+
+.createElement("element") - makes an element in the web page
+    - only lives in JavaScript until appendChild is called
+.setAttribute() - 
+.appendChild() - actually adds the content to the page
+
+"virtual element" - before an html element added to the page using .createElement()
+
+hex color values - only need first 3
+    gray - #333, #666, #888, #999
+
+.append() vs .appendChild()
+    .appendChid() - Node.appendChid() - ONLY 1 at a time
+    .append() - Element.append() - more flexible, can do multiple at once
+        listEl.append("<li> pizza for life </li>");
+
+event listeners - have JavaScript waiting for an event to happen
+    - have code execute when some event happens
+    var button = document.querySelector(#button)";
+    button.addEventListener("click", function() {
+        // do something on click
+        // anonymous function or named function
+    });
+
+event is often abbreviated as "e" or "evt"
+for full control, use event.preventDefault(); - prevent page from doing some strange default behaviour
+
+top of script files are the variables
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

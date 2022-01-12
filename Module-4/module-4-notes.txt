@@ -27,6 +27,7 @@ Event - user behaviour, click events
     event handler - response to the event
     .addEventListener() - method used by an element object. adds event listener to object accessd using dot notation
     anonymous function - doesn't have named identifier and can't be called outside the context of the expression
+        - within event listener function() {//anonymous function here}
 
 Callback - a function passed as an argument to another function
 
@@ -141,14 +142,35 @@ var saveJSON = function("array-name", array) {
 
 Burning Questions:
 What is the difference between an event interface and an event object? 4.2.5
+    event interface - event will inhertienly have an interface
+    event object - event has children objects that represent each event individually
+    addEventListener is a handler that handles an event
+    they are the same thing
+
+
 Would the event object be considered a class?
 
-.querySelector() - what is happening with it? what does it do? how does it work? why do I need to use it? 
+.querySelector() vs .getElementById()
+    what is happening with it? what does it do? how does it work? why do I need to use it? 
+    to select in CSS or html dom
+    like a group of objects
+    querySelector - can be called from anywhere
+    vs .getelementbyid - which is more specific query selector
+        - can only call from the global
 
-lexical scoping - i got three different definitions of it
+    newer versions - querySelector and querySelectorAll - allows selector syntax like with CSS vs 
+        old version - getelementbyid - 
+
+lexical scoping - when the scope of the variable is determined by the structure of the program, - or static scoping
+dynamic scoping - bound by its most recent assigned value
 
 Difference between xml and html?
 
+setTimeout vs setInterval vs Dateobject? 
+
+xml vs html vs asp vs php
+
+do local storage for next time
 
 
 
