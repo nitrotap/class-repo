@@ -172,5 +172,20 @@ xml vs html vs asp vs php
 
 do local storage for next time
 
+object as noun, function as verb?
+
+
+how would you structure the objects and functions in code quiz?
+
+what is the difference between this and event.target()
+    why does the internet say event is deprecated?
+
+
+check removeeventlistener in script.JSON
+
+
+localStorage - having trouble accessing elements for displaying to textContent
+
+
 
 

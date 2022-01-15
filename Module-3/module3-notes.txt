@@ -87,6 +87,16 @@ while (condition) {
 local scope - refers to a variable that only exists within the scope of a function
     contrast to global scope - variable that exists globally
     local variables take precedence over global if the name is same
+
+// globals
+var a = 1;
+b = 2;
+
+function() {
+    var c = 1; // local
+    d = 2; // global
+}
+
 TODO: 3.3.3 watch scope video
 
 TODO: 3.4.4 watch video
@@ -176,5 +186,19 @@ function calls
         - base case - if some condition is met, pick value and return it
 
 
+Hoisting - function declarations able to be run after they can be invoked
+    var declaration = instantation;
 
 
+objects
+    - variables with more variables in it
+    - have key values, can have methods that change key values, 
+
+var object = {
+    key: value;
+    objectMethod: function() {
+        console.log(this.objectProperty);
+    }
+}
+
+this - current context - 

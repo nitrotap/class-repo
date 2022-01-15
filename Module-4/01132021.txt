@@ -1,0 +1,75 @@
+Class Notes
+
+psuedo coding - 
+
+can help with dream project
+
+git pull request - making a branch to contain the changes, requesting to pull changes into main branch
+
+vim - text editor, :q - quits vim text editor
+
+review pr - review pull request, send link for approval
+
+as a developer, github pull requests are about it
+
+setTimeout(expression, timeoutinms);
+    - an in-DOM Timer
+    - only fires once at the timeout
+
+
+setInterval(expression, timeoutinms)
+    - fires over and over at set time setInterval
+
+var date = new Date();
+datetostring = date.tolocaletimestring();
+
+  var timeInterval = setInterval(function () {
+    if (timeLeft > 0) {
+      timeLeft--;
+    } else {
+      clearInterval(timeInterval);
+    }
+  }, 1000);
+
+data attributes
+    - custom html properties, create custom attributes
+    hiding information in html
+    called by dot notation 
+
+check .value after the item in the object definition to be written json.stringify
+
+
+
+
+
+array of objects, each object has initials, then score key
+    - might not be parsed first
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
