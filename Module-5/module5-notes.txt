@@ -1,0 +1,233 @@
+TODO
+
+videos at https://courses.bootcampspot.com/courses/1041/pages/5-getting-ready-for-class?module_item_id=410414
+
+video at https://courses.bootcampspot.com/courses/1041/pages/5-dot-1-5-assess-the-current-codebase?module_item_id=410462
+
+
+
+Module 5 Notes
+
+5.1 jQuery
+Content Delivery Network (CDN)
+    - hosts files as a public service to making loading resources faster and easier
+    - included in HTML files
+    jquery.min.js - powerful function represented by $
+
+jQuery
+    - offers a shorter way to find and manipulate DOM elements
+    // jquery version
+        $( "button.continue" ).html( "Next Step...") ;
+    // plain javascript
+        document.querySelector("button.continue").innerHTML = "Next Step...";
+    button click - on() method
+
+
+javascript library - prebuilt set of javascript methods to make it easier to perform functions
+    - jquery is one example of a javascript library
+
+modal (or pop-up) - an overlay that requires user interaction before returning to the main application
+
+trigger("focus") - highlighted element
+on("blur) - when unfocused
+
+
+tasks is an object.
+tasks[status] returns an array (e.g., toDo).
+tasks[status][index] returns the object at the given index in the array.
+tasks[status][index].text returns the text property of the object at the given index.
+
+tasks[status][index].text = text;
+saveTasks();
+
+
+When $() is passed class names, ids, or elements, it acts as a selector similar to document.querySelector().
+When $() is passed an element opening tag, it creates an element that can have additional jQuery methods chained on.
+We can add elements to an array by using the push() method.
+jQuery allows us to add classes to an element, but not with $() alone. Instead, we use the addClass() method after an element has been created or selected.
+
+
+5.2 bootstrap
+    - a way to set up mobile responsiveness using a standardized css files
+    - uses a standardized format to display 
+    - rows in bootstrap are flexbox parents or containers
+    - list-group <ul>
+    - list-group-item <li>
+    - m is margin, p is padding
+    - uses a baseline of 12 rows
+        col-3 stands for taking up 3 out of 12 rows
+    - smallest to the largest breakpoints
+    - containers>rows>columns
+        each row is 12 columns wide
+        col-12 - the smallest breakpoint, use all 12 column spaces
+        col-sm-6 - for small size screen, take up 6 spaces
+        col-md-4 - for medium size screen, take up 4 spaces
+        col-lg-3 - for large size screens, take up 3 spaces
+        single-column example:
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3>
+    
+<!-- A row with three mixed-size elements -->
+<div class="row">
+  <!-- Span 3 of 12 columns, or 1/4 of the row -->
+  <div class="col-3"></div>
+
+  <!-- Span 6 of 12 columns, or 1/2 of the row -->
+  <div class="col-6"></div>
+
+  <!-- Span 3 of 12 columns, or 1/4 of the row -->
+  <div class="col-3"></div>
+</div>
+
+bootstrap cards
+    cards encapsulate related Content
+<div class="col-12 col-md-6 col-xl-3 mb-3">
+    <div class="card">
+                  <h4 class="card-header">
+                To Do
+              </h4>
+              <ul id="list-toDo" class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <span class="badge badge-primary badge-pill">05/28/2020</span>
+                  <p class="m-1">Sample task to do</p>
+                </li>
+              </ul>
+
+Modals
+    - pop up windows
+    - popper.js
+    - bootstrap uses a custom data attribute connect a button to the modal it opens
+    - look through docs?
+
+Forms
+    form-group - class container
+    form-control can be added to <textarea> and <input>
+
+5.2.6 bootstrap utility
+bg-dark - background color dark
+text-light - light colored text
+sticky-top - keeps header at top
+d-flex - display flex
+flex-column - vertical direction for flexbox
+p-4 - padding 4
+p-lg-3 - padding for large screen sizes is 3
+
+
+jQuery UI
+    - jQuery UI is a separate plug-in from the jQuery main library  
+        - thus it requires extra urls
+    - cloudflare CDNjs links for jQuery - minified version (all extra spaces, line breaks, and comments removed)
+        - https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
+        - https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css
+    accept - controls which draggable elements are accepted by the droppable
+    tolerance - which mode to use for testing when draggable is hovering over another droppable
+        "fit" (overlaps entirely), "intersect" - draggable overlaps 50% in both directions
+        "pointer" (mouse pointer overlaps the droppable), "touch" - draggable overlaps droppable
+    drop - an event - triggered when a draggable is dropped on the droppable
+
+5.3.7
+Touch Punch (not updated in years)
+    adds drag and drop functionality for mobile devices
+
+Script file order is very important!
+    - JQuery
+    - JQuery UI
+    - TouchPunch
+
+hover event is not specific to sortable widget. it can be listened for using .on("hover")
+
+
+5.4.4
+HTML5 Native date picker - type="date" - add to input element
+    - so easy!
+
+jQuery date picker
+    $("date").datepicker({
+    minDate: 1    // how many days after current date we want the limit to kick in
+    }
+
+Moment.js
+    var currentTime = moment();
+    timeElement.textContent = currentTime.format("MMM DD, YYYY - hh:mm:ss a");
+    timeElement.textContent = currentTime.add(3, "hours").format("MMM Do YYYY - hh:mm:ss a");
+    Using Moment.js for due dates - moment().isAfter(time) - gets current time from moment and checks if value is after time, query method, returns T/F
+        1 trim text var
+            date = $(taskEl).find("span").text().trim(); // get date from task element
+        2 convert to moment object
+            var time = moment(date, "L").set("hour", 17); // convert to moment object at 5:00pm
+        3 remove old classes
+            $(taskEl).removeClass("list-group-item-warning list-group-item-danger"); // remove any old classes from element
+        4 apply new classes
+            if (moment().isAfter(time)) { // apply new class if task is near/over due date
+                $(taskEl).addClass("list-group-item-danger");
+            }
+
+        jQuery.removeClass() - remove any classes
+        moment().isAfter(time) - query method, returns T/F, gets current time from moment and checks if value is after time
+
+    Using Moment.js for upcoming dates (.diff() - how many days away the date is)
+        1 apply class if task is overdue
+              if (moment().isAfter(time)) {
+                $(taskEl).addClass("list-group-item-danger");
+              }
+        2 add check for difference of now and a day in the future
+              else if (Math.abs(moment().diff(time, "days")) <= 2) { //
+                $(taskEl).addClass("list-group-item-warning");
+              }
+
+5.5.4 JS timers
+    setTimeout(callback, timerInms) - runs once
+    setInterval(callback, timer) - runs constantly
+    asynchronous functions - run in background until it's time to execute callback function
+    1800000 is 30 minutes - (1000*60)*minutes
+
+5.5.5 Custom Fonts
+    https://fonts.google.com/
+    Don't forget to add to CSS!
+
+5.5.6 OpenIconic - https://useiconic.com/open
+    Add span in Bootstrap right before button text content
+        <button><span class="oi oi-trash"></span>Button Text</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,99 @@
+Class Notes
+
+Housekeeping
+last week we learned browser apis - this week is third-party apis, someone else built so "third party"
+
+underscoreJS _JS
+    - similar to jQuery
+
+can choose to use the tool you want - vanilla JS or use third party apis
+
+moment.js - deprecated but still in many codebases
+
+re-grade requests, send to nathan, within 1 week of receiving the grade - via slack
+
+catch-up session January 23 at 3pm Central/4pm Mountain - optional
+
+quiz app challenge
+    - functionality
+    - design
+    - can use same exact questions
+    - doesn't have to be exact copy
+
+
+week 5 challenge
+    - using jQuery for click events
+        - added to localStorage
+    - moment.js to display date, 
+        - using moment.js to see what time it currently is 
+            - hours of the day that have passed by have a different color
+            - current time of day is a different color
+            - upcoming times are a different color
+        
+
+
+jQuery - the OG client side 
+    - core JS parts came from core JavaScript
+    - downloading data from databases - AJAX - still commonly used (week 6/ server-side APIs)
+    - giant JavaScript file
+    - can use CDN or self-hosted
+    "$" is standard format for selector, $("#clickMe") where clickMe is an element
+    - can create DOM element with angle brackets
+        var unorderedListEl = $('<ul>');
+        unorderedListEl.text('some list item')
+            .addClass('red')
+            .attr('class', 'classname')
+    can use "this" to refer to previously called elements
+    .on('click', 'submit', 'mouseenter mouseleave')
+    - can pass variables and "string"
+
+nodes
+    document>root-element>parent-node>child-nodes/sibling-nodes
+
+DOM traversal 
+    - climbing up and down the tree (DOM) 
+    .find() - search all decendant elements with a selector
+    rootEl.children().last().children() - chaining methods to combine searches
+    first() - select the first element of the set of returned elements
+    .eq(2) - second element 
+
+jQuery event delegation - things that have been created after the page is loaded
+    - passing in parent element, then select element
+    - second input to find
+    - needed when crreating an element on the page after initial js file runs
+    - some elements can be queried on load, but new elements can't be queried. must use event delegation syntax and pass another argument
+    - this must always be passed into jQuery 
+    - query the entire document, on
+    $(document).on("click", "selectedItem", runThisFunction());
+        - the "event delegation" is the click event delegating the "selectedItem" onto the document?
+        - The 'delegation' part happens because we're delegating (giving the job to) whats inside $( ) to listen for events on the newly created elements
+    
+    $("document").on("click", "itemClickedOn", runThisFunction);
+    OR
+    $(".someParentClass").on("click", "itemClickedOn", runThisFunction);
+    function runThisFunction() { 
+        // code that runs on click event....
+        this.remove();
+    }
+     - how does this work into event bubbling/propogation?
+
+each time block has its own save button - whichever save button is selected, get text content from sibling element
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

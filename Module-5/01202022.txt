@@ -1,0 +1,47 @@
+Class Notes
+
+office hours saturday and sunday now
+
+quiz app
+    - can use more than one html file
+    - save high scores in an array of objects / initials, scores as keys
+
+day-scheduler
+    - can change system time to see what it looks like
+    - time blocks with text field
+    - buttons on right are save buttons (use this keywork and dom traversal methods
+        each save button   need to be able to use one click listener and use the save buttons' parent
+
+git revert <commit sha id>
+    - to go back to a previous versoin
+
+
+Bootstrap - predefined CSS styles
+    import using link tag - external css link
+    uses predefined CSS classes
+    every grid is made of containers, rows, and columns (12)
+    check version!!!
+    classes to create a column that spans full width on mobile and half width on larger screens -->
+            <div class="col-md-12 col-lg-6">
+    classes for a row and align items to the bottom -->
+          <div class="row align-bottom">
+    classes to create a column that spans full width on smaller screens and 3/4 on larger screens -->
+          <div class="col-12 col-md-9">
+    classes to create a column that spans full width on mobile, half width on medium screens, and 1/3 on larger screens -->
+          <div class="col-12 col-lg-4 col-sm-6 mb-3">
+    - bootswatch is an addon themes for bootstrap
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
