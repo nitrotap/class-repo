@@ -149,6 +149,7 @@ Moment.js
     var currentTime = moment();
     timeElement.textContent = currentTime.format("MMM DD, YYYY - hh:mm:ss a");
     timeElement.textContent = currentTime.add(3, "hours").format("MMM Do YYYY - hh:mm:ss a");
+    timeElement.textContent = currentTime.format(
     Using Moment.js for due dates - moment().isAfter(time) - gets current time from moment and checks if value is after time, query method, returns T/F
         1 trim text var
             date = $(taskEl).find("span").text().trim(); // get date from task element
@@ -188,8 +189,12 @@ Moment.js
     Add span in Bootstrap right before button text content
         <button><span class="oi oi-trash"></span>Button Text</button>
 
+$$ - chrome created a way to find selectors, testing if queryselector is working
+    -  $ - queryselector(), only first element that it finds
+    - $$ - queryselectors() - finds multiple, usually used for classes
 
-
+to create a new element - use <>
+to select an element - don't use <>
 
 
 
