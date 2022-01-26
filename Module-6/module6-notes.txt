@@ -1,0 +1,123 @@
+Module 6 Notes
+
+
+Error Codes
+    200 (OK)
+    404 (File not Found)
+    500 (External Server Error)
+    304 (loading from cached files)
+
+
+Fetch API
+    allowing a client to exchange data with a server
+    HX - way to get data from servers using jQuery
+
+    Example Fetch API in fetch-api-notes.js
+    .then(function(data){
+        console.log(data); // object contains lots of objects received from server
+    }
+
+    question work - denotes a query string (url var or parameter).
+        requests specific data based on a query string (?results=5) "requests 5 results"
+
+
+    response.status - returns error code for response - OK is 200
+    response.ok - T/F for 200
+    document.location.replace('./errorpage.html') - replaces current page with quoted
+    .then() - executes code within parenthesis after previous code
+    HTTP Response Headers
+        include helpful info with security related data
+        response headers - containing info about files and formats in files received in request
+        general - info about request url and request method
+
+
+MVP - Minimum viable product
+    website with just enough features to satisfy early customers and gain feedback for future product development
+    "Keep it simple"
+        think of audience, customers
+        what's the problem the product will address?
+        how does the product solve the problem?
+        product - services your website offers
+        User Story - is like Acceptance Criteria
+
+REST - Representational State Transfer -
+    - a style of software architecture for distributed hypermedia systems like internet
+    - clients on one side initiate request, servers on the other processes and returns response
+    - A client can be "at rest" - able to interact with user but creates no load and consumes no per-client storage on the set of servers or network
+    - RESTful architectures can be based on the transfer of "meaningful representational state"
+
+6.1.4
+server - piece of hardware set up to provide resouces to clients
+clients - other devices sending requests to servers
+client server model - describes how a server provides resources and responses to a client
+
+JSON - JavaScript Object Notation
+    lightweight data interchange format
+    early 00's
+    much more popular than xml
+    can be used by many other languages
+
+curl
+    - api tester, verify api endpoint
+    curl https://api.github.com/users/octocat/repos // verifies api endpoint
+    curl -o octocat.json https://api.github.com/users/octocat  // save the data returned from /users/octocat to a local file called octocat.json
+
+ping
+    - api tester
+    api.github.com
+
+Promise
+    - advancec callback function
+    .then() - method called when promise is fulfilled
+
+Asynchronous methods - don't block code underneath from running
+    - timers, event callbacks
+
+AJAX (Asynchronous JavaScript and XML)
+    - asychonrous communication with server
+    - xml is old fashioned, JSON is newer
+    - jQuery can parse XMLHttpRequest with method $.ajax().done()
+        $.ajax("https://api.github.com/users/octocat/repos").done(function(data) {
+         console.log(data);
+        });
+
+
+API endpoint is similar to a function in the sense that the same base URL can return different data depending on the argument(s) given
+
+
+getUserRepos("octocat"); // https://api.github.com/users/octocat/repos
+getUserRepos("microsoft"); // https://api.github.com/users/microsoft/repos
+getUserRepos(user); // https://api.github.com/users/<user>/repos
+
+Promise
+    - Pending   fetch("url")
+    - Fulfilled .then(function(response){return response.json})
+        IF fulfilled, chain
+            .then(function(myJson) {
+                yourHTMLDecodefunction(myJSON);
+            }
+    - Rejected  .catch(function(error){console.log(error)})
+
+to account for network errors, in fetch api, use .catch()
+
+HTTP headers - allow the client and server to pass additional data with an HTTP request or response
+    Content-Type - specifies data format (aka json, etc)
+    .get("Link") - checks for a "Link" header in JavaScript
+
+6.4.3
+Query Parameters (?)
+    - strings appended to the end of URLs
+    // create a link for each repo
+    var repoEl = document.createElement("a");
+    repoEl.setAttribute("href", "./single-repo.html?repo=" + repoName);
+
+6.4.4 Location Web Api
+    search property includes the string "?q=javascript"
+        anything after and including the ? is logged into document.location
+    use string.split("SPLIT_OPERATOR") to split query string into variables
+
+
+
+
+
+
