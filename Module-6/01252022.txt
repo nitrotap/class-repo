@@ -1,0 +1,51 @@
+Class Notes
+
+another word for server-side APIs - REST APIs
+
+Week 6 Challenge - Weather Dashboard - third party APIs
+    using fetch requests to fetch weather data for a particular city
+    making requests to openweather api - use jsonformatter to see api and inspect response
+    past searches populate on left hand side
+        query a city - hits openweather api, then parse and present in nice format
+    1. todays forecast - with icons included with API
+    2. 5-Day forecast - 5 blocks with weather horizontally
+
+Project
+    use at least 2 apis and create something novel
+    usual format requirements
+    NO bootstrap
+
+query parameters - query specific info from api / database
+    at the very end of a full URL
+    everything to the right
+    limit to how long URL can be - (really really long)
+    api endpoint - place where actual data will come back to us
+
+asynchronous programming - means it's "in time"
+    promises - syntax to use is .then(callback)
+    first make a promise with JS - .then()
+        when fetch request is done, then ....
+
+Another syntax -
+
+Repo Setup - 06-Git-Guide
+    new empty repo
+    Node .gitignore is a good template
+
+
+
+
+header js // article js
+
+
+
+
+
+
+
+
+
+
+
+
+
