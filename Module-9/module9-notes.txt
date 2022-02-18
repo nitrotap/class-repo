@@ -1,0 +1,238 @@
+Module 9 Notes
+
+Spaces in node are used as a separator, so when using multiple words make sure to wrap them in quotes
+process.argv
+    wrap text in quotes to make sure it works right
+
+process
+    global object that represents everything going on with this app
+    always present in the context of the runtime environment (like document or window)
+    large object with data providing context for the app
+    first two indices of process.argv are node.js and file executed
+    .argv property
+        an array that holds exactly what was typed into the command line upon execution
+        to prevent manipulating process array, 
+    
+    
+Array method .slice
+    .slice(firstIndex, lastIndex (process.argv.length))
+
+const - "constant"
+    except for arrays and objects
+        const creates read only data (can't be changed)
+        JS engine interprets const arrays and objects as containers
+    Strings and numbers cannot be altered (immutable)
+
+var
+    function-scoped
+    changing value within block also changes outside block
+    
+JavaScript ES6
+    Ecma International
+    ES6 - 2015 - ECMAScript 
+    use MDN docs before following others' advice on what to use
+    DON'T MIX ES6 and ES5 syntax
+
+Arrow Functions
+    don't need function keyword
+    const addNumbers = (num1, num2) => num1 + num2 // implicit return
+    DO NOT have a this keyword
+    when it has 1 argument, parentheses are optional
+
+
+forEach statements
+    .forEach((item) => {
+        console.log(item)
+    })
+    .forEach(item => console.log(item))
+
+functionally scoped (aka lexically scoped) 
+    in contrast to block scoped
+
+var is functionally scoped / let and const are block scoped
+
+The JavaScript runtime environment provides the apis applications can use
+
+
+easy error handling
+    err => {if (err) throw err;}
+
+Template Literals  - I don't know why I think they're temperate
+    enclosed by back ticks
+    'This is a template literal ${<variable>}'
+    multi-line Strings - add return
+    Can run inline JS code with text, but can't use if statements
+        can only use code that gets data directly into it
+    
+
+
+Get year
+        const year = new Date().getFullYear()
+
+
+Node.js
+    Running Node - node <filename>
+    runtime environment
+    assumes .js 
+    has set of built in modules - part of node api like client-side JS uses browser api
+    by default, has no front-end
+
+    Node JS Modules
+    module can be a function, class, object, or simple variables
+    FS - File System
+        const fs = require('fs')
+        fs.close(), fs.open(), fs.readFile(), 
+        fs.readFile('./message.txt', )
+        fs.writeFile(<filename>, <dataFunction>, <errorFunction>)
+        fs.copyFile(<filenametobecopied>, <copiedfilename>, <errorFunction>)
+    HTTP
+        const http = require('http')
+    url 
+        var url = 'http://localhost:5000/index.htm?year=2020'
+        var q = url.parse(url, true)
+        q.search // document.location.search
+    version check
+        node --version
+    require - built in import statements
+
+    Import and Export of Modules in Node.js
+    For function const a in ('./<fileNameWithFunction>.js')
+        // export module, put in bottom of js file
+        module.exports = { 
+            propertyName: propertyValue
+            functionCall: functionName
+        }
+        // import module
+        const <packageName> = require("./<packageFile>.js")
+        // using functions from other file
+        <packageName>.<functionCall>()
+
+All Valid JS Function Declarations
+// setting variable as arrow function
+const square = (x) => {
+  return x * x;
+}
+// named function
+function square(x) {
+  return x * x;
+}
+setting variable as a function
+const square = function(x) {
+  return x * x;
+}
+// setting variable as arrow function
+const square = x => x * x;
+
+
+9.3 npm Node Package Manager
+    npm is an online repository for open source code
+        look at weekly downloads for reliability (higher is better)
+    command line utility for installing/interacting with those packages
+        npm init // must be initialized in terminal
+            creates a manifest.json file
+        npm install <packageName>
+            reads package.json/package-lock.json and installs dependencies
+    
+
+9.4.3 
+Promise Chain
+    a series of functions that return promises, using .then()
+
+Object/Array destructuring
+    Arrays and objects
+        Arrays called by index - ignores indexes not included
+            const [arrayIndex, arrayIndex] = <newArrayName>
+
+        objects called by key name of property
+            const <newObject> = {
+                keyName: <oldObject>.<oldObjectPropertyValue>
+                gitHub: templateData.gitHub // example
+            }
+
+Spread and Rest Operators (...)
+    left side of equals sign is Rest
+    ... = newArray is REST
+
+    right side of equals sign is spread
+    stuff = ...Array is SPREAD
+Spread
+    const <copiedArray> = [...originalArray]
+    creates a new array instead of editing original Array
+    since JS engine sees array as a container, it ends up being editable
+    to avoid accidentally editing an array, you can use the spread operator to copy the original array
+    
+Rest
+    creates an new array containing the remaining indices of an array
+    const [<firstIndex>, <secondIndex>, ...<arrayNameForRemainingIndices>] = newArrayName
+    const [first, second, ...remaining] = newArray
+
+
+.map() Array method
+    takes in a function instead of just running code it has a return
+    needs return statement
+    use an array of data to create a new set of data based on it
+    const newArray = oldArray.map(item => {
+        // runs code in block
+        console.log(item)
+        // needs return
+        return '${item} is your item';
+    })
+
+
+.join() Array method
+    creates and returns a new string by concatenating all elements in an array with specified separator
+    does not affect original array
+    const newArray = oldArray.join("<separator>")
+
+.filter() Array method
+    execute a function on each element to see if it should be included in new array
+    does not affect original array
+    const newArray = oldArray.filter (item => {
+        if (item) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+
+    
+9.5.3
+
+Nested Callback functions are called
+    Callback Hell
+    Pyramid of Doom
+
+
+dist directory stands for "distribution"
+utils directory - utility for page
+
+
+9.5.4 Asynchronous Code
+    synchronous code - each statement executes in order
+    async code - allows rest of program to run while waiting for code run
+
+
+
+Promise Object
+    a container to run code with pending status
+    an object waiting for a future value
+    3 states - pending, fulfilled(resolve), fail(rejected)
+
+shorthand property names
+    if key name is the same as value, then you can use name as value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

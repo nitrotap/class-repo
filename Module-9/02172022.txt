@@ -1,0 +1,55 @@
+Class Notes February 17
+
+process.argv
+    an array containing command line arguments
+    first is "node"
+    second is "filename.js"
+    third is extra input
+
+ternary operator
+    true/false statement
+    <variable> ? <if true statement>:<if false statement>
+    console.log(day ? "daytime" : "nighttime")
+
+    (err) => {
+        err ? console.log(err) : console.log("Success!")
+    }
+
+filter array method
+    can return what you are looking for using .startsWith()
+
+map array method
+    can do almost all other array methods (filter, etc)
+    .map(data, index, array)
+
+.reduce() array method
+    takes a whole array and goes through each element and accumulates them into a single value
+    const combinedArray = originalArray.reduce(<number>, <running total>)
+
+destructuring in JS
+    unpacking an array or object for the specific properties/indices you want
+    var {keyName} = object // takes out property key
+
+
+// TODO: Destructure the nested object 'js'
+const { framework1, framework2 } = js.tools.frameworks
+
+// TODO: Destructure the array 'languages'
+const [markup, style, scripting] = languages
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

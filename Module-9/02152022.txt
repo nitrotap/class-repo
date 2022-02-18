@@ -1,0 +1,87 @@
+Class Notes
+
+
+node.js
+
+open source js runtime environment
+
+
+can't use arrow functions for object methods or event handlers
+
+const and let are block scoped
+    let - when a value will need to be reassigned
+    const whenever a value won't need to be reassigned
+
+
+Truthy/Falsy
+Six Falsy Types - undefined, null, NaN (not a number, 0,
+    "", false
+
+Truthy
+    any object or kind of object
+    boolean(false) is Truthy?
+
+Template literals
+    embed JS expressions in text
+    to embed some value, ${js within curly braces}
+
+npm
+    free hosted library where anyone can publish code
+    inquirer.js
+        npm -v
+        npm --version
+        npm init - has you fill out a bunch of values
+        npm init -y - makes it for you
+        npm -i <package name>
+        npm install <package name>
+        npm ls
+    all creates package.json / package-lock.json (exact version of different things)
+        a lot of times, .gitignore package-lock.json and node modules
+            ALWAYS gitignore node modules
+            because theres a lot of data that aren't necessary
+            never send up to repo - can just send others the list of dependencies (package-lock.json)
+
+fs - file store
+var fs = require('fs')
+    fs.writeFile('./output.txt')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
