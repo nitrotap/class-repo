@@ -1,0 +1,156 @@
+Module 10 Notes
+
+DRY - Don't Repeat Yourself
+
+OOP - Object Oriented Programming (Software Engineering Principle)
+    a programming paradigm based on objects, containing variables called properties, and functions called methods
+    class - blueprint/prototype for an object
+
+Test Driven Development - TDD (Software Engineering Principle)
+    Red - write test for the code first, then write enough code to pass test
+    Green - write minimal amount of code for test to pass
+    Refactor - refactor code
+
+
+Jest - node.js module for testing
+    npm scripts - allow us to add short snippets we want our project to run during the build instead of command line
+    npm start, test, restart, stop don't need run
+    npm run <scriptName>
+
+    Jest checks all tests in __tests__ folder / checks mocks in __mocks__
+        name test file based of name of js file
+        to test random.js name test file random.test.js
+        npm run test
+        expect is a specialty function from jest that returns a special expectation object
+            will call function with args, then return the result
+            toBe() will test return result against what's in the parenthesis
+            toBeGreaterThanOrEqual()
+            toBeLessThanOrEqual()
+            toEqual()
+            stringContaining() - 
+        
+        npm run test <testName>
+            
+        test("String that describes test outcome", () => {
+            expect(<importedModule>.<functionFromImportedModule>(<params>)).toBe(<expectedAnswer>)
+        })
+
+OOP
+Constructors
+    1. Create the object
+    function Object(parameter1, parameter2) {
+        this.property1 = property1;
+        this.property2 = property2;
+    }        
+    function Car(make, model) {
+        this.make = make
+        this.model = model
+    }
+
+    2. Instantiate the object by "building" it with 
+    new Object("<object1Name>", "<object2Name>")
+    new Car("Honda", "Toyota")
+
+
+10.2
+Mock - fake data
+
+
+SOLID - acronym for 5 software engineering design principles
+
+S - Single Responsibility Principle
+O - Open-Closed Principle (open for extension, closed for modification)
+L - Liskov Substitution principle (functions using pointers or references to base classes must be able to use objects of derived classes without knowing it)
+I - Interface Segreation Principle (many client interfaces are better than one general purpose interface)
+D - Dependency Inversion Principle (high level modules should not import anything from low-level modules (using interfaces instead) and implementations should depend on abstractions)
+
+
+Define Methods for constructors 
+    - using this keyword (this.name = name)
+        - creates methods for each instance of this
+    - using prototype syntax (Player.prototype.name)
+        only creating the method once on the constructor
+        new objects inherit the method from the constructor instead of having their own methods
+    Prototype Chain - when objects inherit methods from higher levels
+
+Arrow Functions and prototype
+    change this keyword to mean parent lexical scope instead of method scope
+    in node.js this will return undefined
+
+Array Methods 
+    .push() - adds to end of array
+    .includes() - 
+    .splice()
+    .map()
+
+Object.create()
+    create a new object and use the given parameter as it's prototype
+    obj itself has no direct properties, but inherited methods will work
+    cont obj = Object.create(<oldObject>)
+    oldObject.prototype = Object.create(<newObject>.prototype) // declare before other prototypes
+
+
+OOP (Software Engineering Design Principles)
+    OOP - model that organizes software development around data/objects vs functions and logic
+
+    Inheritance (Software Engineering Design Principles)
+        - able to have constructors from prototype classes
+        - parent/child relationship among classes
+        - all child classes inherit methods of parent classes
+
+    Encapsulation (Software Engineering Design Principles)
+        - Objects can keep data private until called with a public method
+        - state and data of each object are privately held within a class
+        - uses a public method to return the data 
+
+    Abstraction (Software Engineering Design Principles)
+        - Object methods are easy to use without needing to understand complex inner workings
+        - hide complex logic behind an easy to use interface
+        - method overloading - static form of Polymorphism
+            - third parameter constructed as on object
+            - check if key inside object exists - if it does, then execute the logic
+
+    Polymorphism (Software Engineering Design Principles)
+        - Objects and methods can change based on context
+        - allows us to create one class but have it do something different based on the number or type of parameters sent to it
+
+
+ES6 Classes/ES5 Constructors
+    ES5
+        constructors are hoisted
+            able to define function AFTER it's called
+        Object.call(this, propertyKey) within child constructor to get Object.propertyKey from parent constructor
+    
+    ES6 - "syntactic sugar" - easier to read and write
+        classes are "syntactic sugar" for constructors
+        does not use prototype
+        uses new, class, super, and constructor keywords
+        class Object {
+            constructor(params) {
+                this.property = propertyValue
+            }
+        }
+        const obj = new Object(params)
+
+        inheritance - 
+            class newObject extends oldObject {}
+            super(params); refers to parent object's constructor
+                include right after child constructor inside brackets
+                add extra properties to the child object
+                call the constructor method of the inherited object
+
+        classes are not hoisted
+            hoisted - function declarations being put into memory before code is executed
+            not able to define function AFTER it's called
+        methods go inside class brackets instead of using prototype
+
+
+
+        
+
+
+
+
+
+
+
