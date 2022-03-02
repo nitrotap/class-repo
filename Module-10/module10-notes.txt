@@ -17,6 +17,8 @@ Jest - node.js module for testing
     npm start, test, restart, stop don't need run
     npm run <scriptName>
 
+
+
     Jest checks all tests in __tests__ folder / checks mocks in __mocks__
         name test file based of name of js file
         to test random.js name test file random.test.js
@@ -61,8 +63,15 @@ SOLID - acronym for 5 software engineering design principles
 S - Single Responsibility Principle
 O - Open-Closed Principle (open for extension, closed for modification)
 L - Liskov Substitution principle (functions using pointers or references to base classes must be able to use objects of derived classes without knowing it)
-I - Interface Segreation Principle (many client interfaces are better than one general purpose interface)
+I - Interface Segregation Principle (many client interfaces are better than one general purpose interface)
 D - Dependency Inversion Principle (high level modules should not import anything from low-level modules (using interfaces instead) and implementations should depend on abstractions)
+
+monolith arch - everything is a single application
+microservice architecture - several small applications
+
+message-based architecture - "high-level"
+    - tying many applications together
+    - can use either monolith or microservice
 
 
 Define Methods for constructors 
@@ -80,8 +89,10 @@ Arrow Functions and prototype
 Array Methods 
     .push() - adds to end of array
     .includes() - 
-    .splice()
-    .map()
+    .splice() - 
+    .slice() - 
+    .map() - 
+
 
 Object.create()
     create a new object and use the given parameter as it's prototype
@@ -135,7 +146,6 @@ ES6 Classes/ES5 Constructors
         inheritance - 
             class newObject extends oldObject {}
             super(params); refers to parent object's constructor
-                include right after child constructor inside brackets
                 add extra properties to the child object
                 call the constructor method of the inherited object
 
@@ -147,8 +157,16 @@ ES6 Classes/ES5 Constructors
 
 
         
+  "scripts": {
+    "test": "jest --verbose test/*",
+    "start": "node index.js"
+  }
 
 
+
+Questions:
+    AAA - Arrange, Act, and Assert
+    
 
 
 

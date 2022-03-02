@@ -1,0 +1,50 @@
+Class Notes
+
+Mock 
+    replace something we don't control with something that we do
+    3 steps:
+        spyOn(<functionName>, "<functionMethod>") - to mock and spy the console.log method
+        mockImplementation(<function to implement OR empty>) - 
+            mock.mockImplementation(() => { });
+        mockRestore() - 
+
+    const mock = jest.spyOn(console, "log"); // a way for jest to reroute output from code we are testing 
+        // an object that will give you all the details from which you attempted to call it
+        
+    const mock = jest.spyOn(console, "log");
+    mock.mockImplementation(() => { }); // empty bc not manipulating
+    mock.mockRestore()
+
+
+Class inheritance for class assignment
+    if a child inherits from parent class (class Rectangle extends Shape)
+        then you can have different input parameters 
+    in the child class, use super(params) to supply inputs for the parent class
+        need to use super to make sure to send the parent class it's needed parameters
+    
+
+
+
+
+The static keyword defines a static method or property for a class. Static members (properties and methods) are called without instantiating their class and cannot be called through a class instance. 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
