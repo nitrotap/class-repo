@@ -1,0 +1,25 @@
+Class Notes
+
+__dirname - path to working folder
+path - module in node 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

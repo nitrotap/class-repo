@@ -1,0 +1,160 @@
+Module 11: Express.js
+npm install express
+# You can use the `-y` flag to skip the package questionnaire and leave default answers
+npm init -y
+# You can use `npm i` as a shortcut for `npm install`
+npm i express
+
+
+port - building
+    80 - http://
+    443 - https://
+    1024 or less are "special" and require admin privileges
+    1024-49151 possible ports
+    3000 - common practice
+
+Environments 
+    Development - code/develop new features or fix bugs
+        local machine
+    Production - Where live application lives (azure, aws, heroku, github)
+        Accessible to users
+        hosts updated versions of code
+        has own dedicated databases and not affected by or connected to local databases
+    Local Environment
+        on your machine
+        new code, features, bug fixes
+    Staging Environment
+        replica of PROD
+        helps test changes in the local environment
+        provides layer of QA
+    Code Releases:
+        weekly, when needed, nightly
+
+Express.js
+Initialization
+npm install express
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+
+Methods
+    .get(), .send(), .post(), .Router(), .listen() (always last)
+
+    .get("<target>", (req, res) => {
+        res.send("Hello!")
+        // res has more methods
+    })
+
+    app.get("<fetchlocation>", callback)
+        string that describes the route the client will fetch from
+        callback function will execute each time the route is accessed with a GET request
+
+    req.query - combining mutiple parameters
+    req.param - single property or record
+    app.get('/animals/:id', (req, res) => {
+        })
+    /animals/123?id=24&params=50
+    req.query.id = 24
+    req.query.params = 50
+    req.params.id = 123
+
+    // wildcard route always last
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, './public/index.html'));
+    });
+
+    // listen for api requests on port 3000
+    app.listen(portNumber, () = {
+        console.log(`api server now open on port ${portNumber})
+    })
+
+    app.post(<route name>, callback)
+    app.post('/api/animals', (req, res) => {});
+    defines a route listening for post requests
+    POST represents the action of a client requesting the server to accept data instead of vice versa
+
+    app.use() - mounts a function to server that our requests will pass through
+        express.urlencoded({extended: true})
+            method that takes incoming POST data and converts it to key/value pairings accessed in req.body
+            extended: true tells express to search for nested data
+        express.json() takes incoming POST data in json format and parses it into req.body
+        express.static() - needs to be used for pages to load corresponding pages properly
+
+        // parse incoming string or array data
+        app.use(express.urlencoded({ extended: true }));
+        // parse incoming JSON data
+        app.use(express.json());
+        // provide file path for static resources
+        app.use(express.static('public'));
+
+    
+    app.post()
+    
+    res.status(400).send('The animal is not properly formatted.');
+
+    const router = require('express').Router();
+    router.use(routes)
+
+
+
+Two major differences between JSON and JavaScript object literal notation are: Strings must use double quotes, not single quotes. Names must be strings.
+
+Insomnia
+
+middleware - used for interpreting data sent to server
+    - a helper function that works between the response/request cycle
+    - create a virtual path based on the location of the file and the route itself
+    
+don't blindly accept incoming data 
+    input validation or server side data validation
+    client side validation is not enough and can be subverted
+    400 bad request error
+    express validator
+
+
+Object.entries(formData).forEach(([key, value]) => {
+    queryUrl += `${key}=${value}&`;
+});
+
+
+jest.mock('fs')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+Class Notes
+
+eadrinuse error
+    taskkill /im node.exe
+
+persist notes as long as server is running
+entry point server.js
+
+building out express routes when data is submitted
+
+crud - create, repeat, update, delete
+
+
+Node.js without Express.js
+http.createServer(function (req, res) {
+
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  var q = url.parse(req.url, true).query;
+  var txt = `<center><h1>${q.month}, ${q.year}</h1></center>`;
+  res.end(txt);
+
+}).listen(8080);
+
+
+express.js
+    de facto standard for creating routes in node.js apps
+    .get(), .send(), .listen()
+        const express = require('express');
+        const PORT = process.env.PORT || 4242;
+        const app = express();
+
+        app.get('/', function (request, response) {
+            console.log(request)
+            response.send(console.log("hi"))
+        }
+
+        app.listen(PORT, () => {
+            console.log(`API server now on port ${PORT}!`); 
+        });
+
+
+
+// GET route for static homepage
+app.get('/', (req, res) => 
+    res.sendFile('index.html');
+
+// GET route for all reviews
+app.get('/api/reviews, (req, res) =>
+    res.json(reviewData));
+
+// POST route to add a single review
+app.post('/api/reviews', (req, res) => {
+   const newReview = req.body
+   writeToFile(destination, newReview)
+
+ res.json(`${req.method} received`);
+});
+
+
+fetch requests - front end
+express routes - back end
+    always conclude express routes
+
+insomnia or postman
+
+
+nodemon - to help start/restart node js after
+
+
+express.static - serve static files in an entire folder
+    app.use(express.static(rootFolder)) 
+    static assets as served by the root folder
+
+or res.sendFile() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
