@@ -1,0 +1,39 @@
+Class Notes
+
+MVC - Model View Controller
+
+Model - Sequelize
+    Data Store - MySQL
+
+View - UI/UX Concerns
+    Handlebars template
+
+Controller - layer between models and views
+    JS function
+
+template engine (Handlebars.js)
+    - software that allows us to combine data with a static template to generate dynamic HTML
+    - helps us follow separation of Concerns
+    - EJS and PUG are other examples, have templates
+
+app.engine()
+
+
+
+view folder, layouts inside view folder (main handlebars inside laywouts)
+
+
+handlebars built in - #if - conditionally render a block
+
+handlebars - #unless - "if Not"
+
+
+
+
+
+
+
+
+
+
+

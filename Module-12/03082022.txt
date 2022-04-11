@@ -1,0 +1,43 @@
+Class Notes
+
+Price can be stored as cents and then divided by 100 on front end
+
+schema.sql  
+    run with source schema.sql
+    SHOW FULL TABLES;
+    DESCRIBE <tableName>;
+
+to update just one single record - ALWAYS supply primary key
+
+C (CREATE) :
+ INSERT INTO pets (name, type, age) VALUES ("fido", "dog", 3);
+
+R (READ) : 
+   SELECT * FROM pets;
+
+U (UPDATE): 
+ UPDATE pets SET name="Fancy" WHERE type = “dog";
+
+D (DELETE):  
+ DELETE FROM pets WHERE type = "mouse";
+
+
+mysql workbench
+
+
+ER diagram - entity relation diagram
+
+
+Questions:
+    do you need not null for primary key?
+    can you use async await for the inquirer promtps?
+    
+
+
+
+
+
+
+
+
+

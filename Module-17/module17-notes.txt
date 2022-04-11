@@ -1,0 +1,261 @@
+Module 17 Computer Science for JavaScript
+
+JavaScript Data Structures:
+    stack - linear - uses array methods pop and push
+    queue - linear - uses shift(remove item from front) and push (add element to end of array)
+    heap - two dimensional with hierarchal organization
+
+    call stack data
+        - adds and removes data structures from only one end of the structure
+        - Last in, First out (LIFO)
+            - type of operation when the last item added onto the stack is also the first item to be removed (like a stack of books)
+        - where JavaScript executes and evaluates code
+        - determines the code to be executed
+        - console.trace() - keeps track of call stack
+    
+    callback queue
+        - another linear data structure like stack
+        - First In, First Out (FIFO)
+            - timing of arrival can make a difference in the timing of exit
+        - enable JavaScript to handle asynchronous functions with the event loop
+    
+    memory heap
+        - heap used in JavaScript
+        - where data is stored
+
+    Web APIs and Node.js core modules
+        - native functions of the browser and provide key interfaces to the DOM or filesystem
+        - 
+
+    single-threaded
+        - executes each line of code, one at a time
+    
+    thread of execution (TOE)
+        - line of code currently being executed
+        - global memory
+        - global variable environment
+        - <|f|> is shorthand for functions params, return type, and definition
+           -  name: <|f|>
+    
+    function caller
+        - 
+    
+    event loop 
+        - when call stack is empty, event loop allows callback function from callback queue to push onto call stack
+    
+    stack overflow error
+        - too many functions placed in the call stack, exceeding its capacity limit
+    
+OOP (imperative) vs Functional Programming (declarative)
+    OOP - based on imperative programming (how a program will run)
+    Functional Programming - declarative programming (what a program does)
+
+
+closure - created when a function is returned
+    - function that contains references to its surrounding state
+    - can transfer surrounding memory references through closures
+    - Three Scope Chains
+        inner function has access to
+        1. its own Scope
+        2. the outer function's variables defined between the outer functions curly brackets
+        3. global variables
+    - used to create private declarations
+    - global variable is last on the closure scope chain
+    - prevent polluting global namespace that cause collisions due to name conflicts
+    - prevents accidental modifications of global variables
+    - performance gains when accessing local variables vs lookups on the global scope
+
+
+    
+lexical environment - the place where references for variables are stored in the memory during program execution.
+
+scope - determined during runtime when JavaScript is compiled
+
+when a function is called:
+    execution context is created
+    places variables in lexical environment
+
+
+
+factory function - in contrast to class function
+    - a way to produce objects with a function
+    - return object literals instead of functions
+
+
+const tiger = function() { 
+    const noise = 'roar';
+    return {
+        sound: function() {
+        console.log(noise);
+            },
+        }
+}
+const tigger = tiger(); // assigned the returned object literal to tigger
+tigger.sound(); //=> "roar"
+
+
+const findIndex = (num) => {
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] === num) {
+      console.log(`${num} found at index ${i}`);
+    }
+  }
+};
+
+factory function vs oop class function
+    - oop
+        - needs keywords this, new
+        - can cause errors due to context changes
+    - factory
+        - can keep variables "private"
+        
+        
+inheritance
+    - design your types based on what they are
+composition
+    - design types based on what they can do
+
+({}) - parenthesis wrapping body of functions
+    - object literal is being returned
+    - instead of creating own state internally, they accept state through function parameters
+
+this keyword 
+    - don't use it
+    - context is lost when this is no longer associated with an object
+    - solved with bind or function wrapper
+    - easiest to eliminate with factory function
+
+
+Algorithm types
+    - linear search - O(n)
+        looks at every index in sequential order
+        works, but a lot of time is wasted looking at unneeded indices
+        add break once index is found
+    
+    - binary search
+        data MUST be sorted in numerical order
+        continually dividing data in half based on whether the number you're looking for is greater than or less than a chosen point
+        looking for "L" in a dictionary, open in middle and go towards "L"
+        must know what direction to "look" towards
+        using midpoints to find correct number
+
+        const data = [12, 23, 38, 40, 54, 62, 71, 87, 99];
+
+        const binarySearch = (arr, num, left, right) => {
+        let middle = Math.floor((left + right) / 2);
+
+        // range overlapped, so never found number
+        if (left > right) {
+            return -1;
+        }
+        else if (num === arr[middle]) {
+            return middle;
+        }
+        else if (num < arr[middle]) {
+            // call again with a new right value
+            return binarySearch(arr, num, left, middle - 1);
+        }
+        else {
+            // call again with a new left value
+            return binarySearch(arr, num, middle + 1, right);
+        }
+        };
+
+        // set initial left and right values on first call
+        console.log(binarySearch(data, 12, 0, data.length - 1));
+
+
+    
+    - 
+
+Big 'O' Notation
+    - mathematical formula that's used to predict the amount of work an algorithm performs as the size on the input grows
+    - O stands for 'order'
+    - the growth rate of a function is also known as the order of a function
+    - operating on a given input with a varying size
+    - list of restaurants alphabetically
+    - Common Big O's
+        - Constant time - O(1) complexity - same number of steps
+            function multiply(x,y) {
+                return x*y;
+            }
+        - Linear Time O(n) complexity
+            function linearSearch(arr, target) {
+                for (let i in arr) {
+                    if (arr[i] == target) {
+                        return arr[i];
+                    }
+                }
+            }
+        - Quadratic Time O(n^2) complexity
+            function buildSquareMatrix(arr) {
+                let matrix = [];
+                for (let i in arr) {
+                    matrix[i] = [];
+                    for (let j in arr) {
+                        matrix[i].push(arr[j]);
+                    }
+                }
+
+                return matrix;
+            }
+        - Logarithmic Time - O(log(n)) complexity - logb(b^x) = x
+            function binarySearch(arr, target, low, high) {
+                if (low > high) {
+                    return -1;
+                }
+            }
+            const mid = Math.floor((low + high) / 2);
+            if (arr[mid] === target) {
+                return arr[mid];
+            } else if (arr[mid] < target) {
+                return binarySearch(arr, target, mid + 1, high);
+            } else {
+                return binarySearch(arr, target, low, high - 1);
+            }
+
+Watch for/while and if/else statements for inefficient code
+    O(n) - linear - searches can take a long time. going through each step in a for loop
+    O(log n) - logarithmic - needs at least 2 data inputs and is faster than O(n)
+    O(1) is just same number of steps each time
+
+
+
+Benchmark.js
+    npm install Benchmark
+    const Benchmark = require('benchmark');\
+    const suite = new Benchmark.Suite;
+    suite
+    .add('random test', function() {
+        // benchmark generating a random number
+        Math.floor(Math.random() * 10) + 1;
+    })
+    .on('complete', function() {
+        console.log(this);
+    })
+    .run();
+
+Alternatives to Benchmark.js
+    Front End - Performance Web API (MDN)
+    Back End - Performance Timing API (Node.js)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Question
+    All the different ways to write a function and why
+

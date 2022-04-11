@@ -1,0 +1,60 @@
+Model View Controller (MVC)
+
+MVC is an architectural pattern that structures a codebase as three distinct sections according to software design philosophy separation of concerns
+
+Models - core data of the app
+Views - the UI components, such as HTML layouts
+Controllers - link between models and views
+
+
+Handlebars.js
+    - a logicless templating language that keeps the View and code separate and compiles templates into JavaScript functions.
+    - extension of the mustache templating language
+    - mostly using express Handlebars
+    - 
+
+express-session package
+    - express.js middleware that uses sessions, a mechanism to determine whether multiple requests came from the same client
+    - every user gets a unique session to store user state and authenticate users
+
+connect-session-sequelize package
+    - provides applications with scalable store for sessions
+    - MemoryStore - default server side session storage
+    - addresses limitations for express-session
+
+
+Handlebars template engine
+    npm install express-handlebars
+    const exphbs = require('express-handlebars');
+    const hbs = exphbs.create({});
+    app.engine('handlebars', hbs.engine);
+    app.set('view engine', 'handlebars');
+
+    always have a main layout located at (and named) 
+        views/layouts/main.handlebars. 
+    All other template files will go directly in the views folder (views/welcome.handlebars).
+
+    {{{ body }}} is Handlebars.js syntax for data that will be plugged in later
+
+    three curly brackets will render data as HTML
+    two curly brackets will convert html strings to characters
+
+
+Express Session and Connect Session sequelize
+    Setup
+    npm i express-session connect-session-sequelize
+    const sess = {
+    secret: 'Super secret secret',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
+    };
+    app.use(session(sess));
+
+
+
+
+

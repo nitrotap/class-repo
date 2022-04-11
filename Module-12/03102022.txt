@@ -1,0 +1,33 @@
+Class Notes
+
+
+Mysql workbench
+    
+JOIN
+    usually inner join or left join
+    INNER JOIN is default
+
+.env.example
+
+to use async await
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

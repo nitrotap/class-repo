@@ -1,0 +1,116 @@
+Module 13 Notes
+
+Object Relational Mapping (ORM)
+    technique that allows us to query and manipulate data stored in a relational database without having to write SQL queries ourselves
+
+ESlint
+    npm install eslint
+    eslint --init
+
+
+Sequelize
+    node.js library
+    mysql, mariadb, sqllite, postgres
+    can model database using js
+    will automatically create tables for you
+    just need to create the database
+
+    model class - create our own js class and define columns, etc
+
+    const Sequelize = require('sequelize');
+    const sequelize = new Sequelize('just_tech_news_db', 'root', 'password', {
+        host: 'localhost',
+        dialect: 'mysql',
+        port: 3306
+    });
+
+    Model class - layer between the api and the database
+
+
+    const { Model, DataTypes } = require('sequelize');
+
+    User.init(
+        {
+        id: {
+            // use the special Sequelize DataTypes object provide what type of data it is
+            type: DataTypes.INTEGER,
+            // this is the equivalent of SQL's `NOT NULL` option
+            allowNull: false,
+            // instruct that this is the Primary Key
+            primaryKey: true,
+            // turn on auto increment
+            autoIncrement: true
+        }
+    )
+
+
+dotenv
+    secure environment 
+    npm install dotenv
+    require('dotenv').config();
+
+Instance Methods
+    - package return data from sequelize with custom methods
+.findAll() - SELECT * FROM table;
+.findOne(), .create(), .update()
+.findAndCountAll() - tally total number of votes
+.belongsToMany - many to many association between Sequelize models
+
+
+sequelize.literal() - execute custom SQL query from within JavaScript code
+
+use a through table to pick and choose attributes from joined data
+    use attributes property within the include option
+
+
+Model Methods
+    - can use combinations of instance methods
+
+bcrypt
+
+REStful api - famous api architectural pattern
+Representational State Transfer
+
+.hasMany()
+
+through table - table that connects the data between two other tables
+
+foreign key constraint - layer of protection to prevent duplicate entries 
+
+REStful api standards use modularized code bases
+
+
+Questions:
+    where to include ProductTag in tag-routes.js 
+    hooks possibly?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Questions
+
