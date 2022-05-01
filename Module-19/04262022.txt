@@ -1,0 +1,19 @@
+Module 19: Progressive Web Apps 
+
+
+webpack - base for react
+
+service worker - run a database on a user's device
+
+PWAs - can be run offline
+    - 
+
+
+Bubblewrap CLI - put onto android
+https://www.npmjs.com/package/@bubblewrap/cli
+
+
+
+
+
+

@@ -1,0 +1,349 @@
+Module 19: Progressive Web Applications (PWA)
+
+
+lazy loading - defer loading certain assets until they're needed by the application.
+
+webpack - module bundler for JavaScript. webpack simplifies front-end web development by automating many of the aforementioned optimizations.
+
+
+Google Lighthouse
+paint occurs when content is loaded on the screen
+ the first contentful paint - which means when any content is loaded
+the first meaningful paint, which occurs when the primary content becomes visible.
+Time to Interactive - This is the time it takes for the webpage being audited to become usable. A long delay in interactivity can lead to page abandonment.
+Page abandonment occurs when a user leaves a webpage without completing the task they set out to do. 
+
+Minification is the process of taking our code and removing all unnecessary characters and whitespace without any loss of functionality in an attempt to save file space.
+
+image compression
+Lossy image compression refers to the fact that some of the image data is lost during compression. Compression will take the data that makes up the image and decrease the image's overall size, with minimal loss to the image's integrity. Once an image has used lossy compression, you cannot reverse the process due to this loss of data. The data lost will normally result in almost unnoticeable changes in image quality most of the time.
+
+For our application, we'll compress our images from a PNG format, which is lossless, to JPG, which is lossy.
+
+webpack
+const webpack = require('webpack');
+npm run build
+
+
+webpack-bundle-analyzer
+a plugin that will analyze our bundle sizes to see how much JavaScript is being processed by the browser
+npm install -D webpack-bundle-analyzer
+
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+plugins: [
+  new webpack.ProvidePlugin({
+	$: "jquery",
+	jQuery: "jquery"
+  }),
+  new BundleAnalyzerPlugin({
+	analyzerMode: "static", // the report outputs to an HTML file in the dist folder
+  })
+],    
+
+configured the analyzerMode property with a static value. This will output an HTML file called report.html that will generate in the dist folder. We can also set this value to disable to temporarily stop the reporting and automatic opening of this report in the browser.
+
+
+Entry point splitting separates code by entry points in your app. An entry point is defined by each page's requisite script files to load
+
+Vendor splitting separates vendor code (e.g., jQuery, Bootstrap, lodash, etc.) away from your app's code. A vendor bundle can also be shared between other bundles, further reducing overall bundle size by creating a common chunk.
+
+Dynamic splitting separates code and allows dynamic importing of modules. This type of splitting is often best for single-page applications that use front-end routing.
+
+
+webpack's main objective is to reduce the processing time needed by the browser to render the webpage. This will improve the overall Time to Interactive (TTI) as well as the First Meaningful Paint (FMP). webpack's main approach is to bundle the JavaScript assets. By splitting the code into modules, webpack can bundle them into bite-sized chunks that can be loaded on demand. This will limit the browser's valuable processing power to focus on the critical chunks for the page load
+
+Because the browser's processing speeds are beyond our control, we must stick to ways to optimize our code for browser loading
+
+
+
+
+encapsulation, or separating our code based on purpose or responsibility
+
+Encapsulating the code into modules creates separate private silos of code. This can protect the variables within the module by creating a local private scope that cannot be affected by outside changes.
+
+Modules can be reused, keeping the codebase DRY
+
+Fixing bugs, adding features, and code maintenance are much easier in a module system due to the organization of the codebase.
+
+
+In the config.entry property, let's modify the main bundle and add the entries for the events, tickets, and schedule following the app entry.
+
+The config.entry object should now look like this:
+
+entry: {
+  app: "./assets/js/script.js",
+  events: "./assets/js/events.js",
+  schedule: "./assets/js/schedule.js",
+  tickets: "./assets/js/tickets.js"
+},
+
+The name of each attribute in the entry object will be used in place of [name] in each bundle.js file that is created
+output: {
+    filename: "[name].bundle.js",
+    path: __dirname + "/dist",
+  },
+
+
+differences between loaders and plugins:
+
+Loaders pre-process the assets on a file by file basis before and during the build.
+
+Plugins are scoped more on the bundle level and deliver changes at the end of the build.
+
+While loaders are configured in the module property of the webpack configuration object, plugins are configured in the plugins array.
+
+Loaders are used mostly for non JavaScript files such as image, CSS, and HTML files.
+
+
+To optimize images in webpack, we will follow these steps:
+Download our file-loader by installing the npm package that will emit our images to our output path.
+Configure our webpack config object to use the file-loader.
+Import our image files into the JavaScript file.
+Optimize image files with image-webpack-loader
+
+
+file-loader
+a package that can process many different types of image files as well as stylesheets into the emitted forms for webpack
+npm install -D file-loader
+
+output: {
+		filename: '[name].bundle.js',
+		path: __dirname + '/dist',
+	},
+	module: {
+		rules: [
+			{
+				test: /\.jpg$/i,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							esModule: false,
+							name(file) {
+								return '[path][name].[ext]';
+							},
+							publicPath: function (url) {
+								return url.replace('../', '/assets/');
+							}
+						}
+					}
+				]
+			}
+		]
+	},
+
+
+
+
+last step will be to use a image optimizer loader, because file-loader only emitted our images without reducing the size
+npm install image-webpack-loader
+
+
+npm install webpack-dev-server -D
+To use localhost for a client application without writing code for an HTTPS-enabled Express.js server, we can install the webpack-dev-server npm module.
+add a new entry to the scripts property in the package.json, as shown in the following code:
+
+  "scripts": {
+      "webpack": "webpack --watch",
+      "build": "webpack",
+      "start:dev": "webpack-dev-server",
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+thread is an independent set of values for the processor that controls the order in which tasks are executed
+
+Service workers have a lifecycle consisting of the following three main parts:
+1. Installation: The service worker creates a version-specific cache.
+2. Activation: This event fires after the service worker has been installed and any previously installed service worker has been removed.
+3. Waiting/Idle: The updated service worker waits until the existing service worker is no longer controlling clients. This step is often skipped with a function, because previous service workers rarely exist past a new service worker's installation.
+
+
+
+
+self here refers to the service worker object
+We've prioritized caching the JavaScript and HTML files so that the site is at least functional.
+
+
+Register service worker - index.html
+<script>
+(function() {
+  if("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./service-worker.js")
+      .then(() => console.log("Service Worker registered successfully."))
+      .catch(error => console.log("Service Worker registration failed:", error));
+  }
+})();
+</script>
+
+navigator 
+	- the object contains information about which browser a visitor is using
+	- Among this data is a property that determines whether or not the browser has support for a service worker
+
+navigator.serviceWorker.register("./service-worker.js") adds a <script src="./service-worker.js"> tag
+
+
+Service workers do NOT need webpack to work. Because the application is already using webpack, we'll only need to prepend the names of the JavaScript files to cache in the dist/ folder.
+
+
+Install the Service Worker - service-worker.js
+service workers run before the window object has even been created. So instead we use the self keyword (vs window.eventListener) to instantiate listeners on the service worker. The context of self here refers to the service worker object
+add files to be cached
+const FILES_TO_CACHE = [
+  "./index.html",
+  "./events.html",
+  "./tickets.html"
+];
+
+
+Every browser has a cache limit, which can range anywhere from 50 MB to 250 MB.
+prioritized caching the JavaScript and HTML files so that the site is at least functional.
+
+
+e.waitUntil to tell the browser to wait until the work is complete before terminating the service worker
+
+caches.open to find the specific cache by name, then add every file in the FILES_TO_CACHE array to the cache.
+
+the browser tries to redownload the service-worker.js file in the background. If the service-worker.js differs in any way from the one that the browser currently has, it considers the service worker to be new
+
+If the service worker is determined to be new, the new service worker will be started and the install event will be fired. Because the old service worker will still be controlling at least one client, the new service worker will enter a waiting state. The old service worker will only leave its active state once every page has closed.
+
+Every time you make changes to the service worker, navigate to the Application tab in Chrome DevTools, select Clear Storage, and then click on "Clear site data". Make sure that the unregister service workers checkbox is selected, as shown in the following image:
+
+
+Activate Service Worker
+self.addEventListener('activate', function (e) {
+	e.waitUntil(
+		caches.keys().then(function (keyList) {
+			let cacheKeeplist = keyList.filter(function (key) {
+				return key.indexOf(APP_PREFIX);
+			});
+			cacheKeeplist.push(CACHE_NAME);
+
+			return Promise.all(
+				keyList.map(function (key, i) {
+					if (cacheKeeplist.indexOf(key) === -1) {
+						console.log('deleting cache : ' + keyList[i]);
+						return caches.delete(keyList[i]);
+					}
+				})
+			);
+		})
+	);
+});	
+
+
+
+
+Intercept fetch requests
+Object.respondWith() to intercept the fetch request
+use .match() to determine if the resource already exists in caches. If it does, we'll log the URL to the console with a message and then return the cached resource,
+if the resource is not in caches, we allow the resource to be retrieved from the online network
+self.addEventListener('fetch', function (e) {
+	console.log('fetch request : ' + e.request.url);
+	e.respondWith(
+		caches.match(e.request).then(function (request) {
+			if (request) { // if cache is available, respond with cache
+				console.log('responding with cache : ' + e.request.url);
+				return request;
+			} else {       // if there are no cache, try fetching request
+				console.log('file is not cached, fetching : ' + e.request.url);
+				return fetch(e.request);
+			}
+
+			// You can omit if/else for console.log & put one line below like this too.
+			// return request || fetch(e.request)
+		})
+	);
+});
+
+
+
+
+PWAs run in browser
+	give users a sense of consistency regardless of network 
+	full internet 
+	PWAs have all latest version of js, html, etc
+
+Progressive Web Application, describes a web app that resembles a native mobile app, and which maintains its reliability, speed, and user engagement even when there is no internet or cell service. 
+
+web manifest is the blueprint of a PWA. It's a JSON file that will contain the metadata such as a title, a description, and an icon that tells the user's device what it is installing and how it should look on the home screen.
+	manifest.webmanifest
+	manifest.json
+	FIVE important things to add to manifest
+		{
+			"name": "Food Event", // name property is the name that will show up next to the app's icon on desktop devices
+			"short_name": "Foodies", // name that will appear on a user's home screen when the application has been downloaded
+			"description": "An app that allows you to view upcoming food events."
+			"background_color": "#01579b",
+			"theme_color": "#ffffff",
+			"icons": [
+				{
+				"src": "/img/icons/icons-192.png",
+				"type": "image/png",
+				"sizes": "192x192"
+				}
+			]
+ 	 	}
+
+background_color
+If the app launches before the browser launches, a splash screen is shown prior to the first paint. The background color of this application is determined by the background_color property that you supply
+
+theme_color sets the color of the tool bar. This color may also show up if the user is switching tasks, either on mobile or or a desktop device.
+
+"icons": [
+  {
+    "src": "/img/icons/icons-192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  },
+  {
+    "src": "/img/icons/icons-512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }
+]
+
+
+
+npm install -D webpack-pwa-manifest
+Fingerprints tell webpack whether or not it should generate unique fingerprints so that each time a new manifest is generated, it looks like this: manifest.lhge325d.json
+inject property determines whether the link to the manifest.json is added to the HTML. Because we are not using fingerprints, we can also set inject to be false. We will hardcode the path to the manifest.json instead, just like we would in an application without webpack.
+icons property, the value of which will be an array of objects. That object contains a src property, which is a path to the icon image we want to use. The next property is sizes. The plugin will take the src image, and create icons with the dimensions of the numbers provided as the value of the sizes property. Finally, the destination property designates where the icons will be sent after the creation of the web manifest is completed by the plugin. The following code shows this code:
+		new WebpackPwaManifest({
+			name: 'Food Event',
+			short_name: 'Foodies',
+			description: 'An app that allows you to view upcoming food events.',
+			start_url: '../index.html',
+			background_color: '#01579b',
+			theme_color: '#ffffff',
+			fingerprints: false,
+			inject: false,
+			icons: [{
+				src: path.resolve('assets/img/icons/icon-512x512.png'),
+				sizes: [96, 128, 192, 256, 384, 512],
+				destination: path.join('assets', 'icons')
+			}]
+		})
+
+need to link our manifest so that the browser knows all the specifications, and most importantly that our application is a PWA
+<link rel="manifest" href="dist/manifest.json"> - index.html
+
+for PWA installable, it must be hosted using HTTPS
+
+
+
+
+
+
+
+
+
+Questions:
+	differences between closure and immediately invoked function expression?
+		closure - any function within a function that has access to the parent function is a closure
+
+		immediately invoked function expression - used to create a closure within the global scope
+
+
+
+	

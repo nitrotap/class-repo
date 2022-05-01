@@ -1,0 +1,175 @@
+Module 18 NoSQL
+NoSQL databases
+    - doesn't rely on SQL relation structure
+    - easy store and retrieve unstructured data and can improve performance for those that use a lot of data
+    - key value stores act like huge hash tables
+    - graph databases - social media uses these to understand interconnected relationships
+    - document store database (all data for single item is stored in a document-like record)
+        - scale easily across multiple computers since docs can be viewed or copied
+    - MongoDB - M in MERN stack
+        - store DOCUMENTS in BSON format (a JSON like object)
+        - MERN stack (MongoDB, Express.js, React, and Node.js)
+            - VERY popular
+        - uses mongoose.js
+        - indexedDB - a NoSQL client-side storage API in browser 
+            - save data locally to the browser w/o internet connection
+
+
+error backpropogation algorithms 
+    - once an error is identified, the machine learning model works backwards to find the source of the error then updates its weighted assumptions to try something different
+    - larger errors change the model in proportion to the error (ie larger errors have more weight)
+
+SQL databases require a lot of planning
+    need tables with explicit column and data-type definitions before interacting
+    allows for predictability
+    
+
+NoSQL - not only SQL
+    no strict column definitions
+    resembles JSON
+    MongoDB is popularly used with Node.js 
+        - data stored in format similar to JSON
+        - organized in collections
+        - to include more data, just start adding it
+
+SQL vs NoSQL
+    SQL - NoSQL
+    Table - Collection
+    Row - Document
+    Column - Field
+
+    SQL data is stored entirely within tables vs. NoSQL is not
+    SQL data is rigidly organized in data models known as schemas vs. NoSQL allows generally unstructured data
+    NoSQL allows applications to handle ever-evolving requirements
+    NoSQL is handled in the application layer, not the database layer
+    NoSQL are horizontally scalable - can be stored on multiple servers vs SQL almost always need to be vertically scaled on a single server (can be expensive)
+    tables in sql databases have few columns and need queries to join vs NoSQL - document can have lots of field, so no need to join
+    NoSQL allows data to be organized hierarchally 
+    SQL - fast response time, consistent data size
+    NoSQL - large datasets or evolving data structures
+
+Object Document Mapper (ODM)
+Mongoose.js 
+    - has more features than MongoDB Node.js library
+    - allows us to add rules for the data
+    - has data validation, prebuilt methods, and more
+
+    Set Up
+    Models folder
+    const { Schema, model } = require('mongoose');
+
+    Server.js
+    const mongoose = require('mongoose');
+    // connect to database
+    mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/pizza-hunt', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
+
+    // Use this to log mongo queries being executed!
+    mongoose.set('debug', true);
+
+    .find() - like sequelize .findAll()
+    .findOne() - gets single element, 
+        .findOne({ _id: params.id })
+    .create()
+    .findOneAndUpdate()
+    .findOneAndDelete() - deletes document and returns its data
+
+    _id - automatically provided by mongoose - special object data type called ObjectId
+    __v - internal version tracking
+
+
+Virtuals 
+    - allow you to add virtual properties to a document that aren't stored in the database
+    - add more information to a database response so you can avoid using a helper
+    - normally computed values that get evaluated when you try to access their properties
+
+
+${verb} - MongoDB based functions
+$push - allows you to add custom id to specific object getting updated
+  { $push: { comments: _id } },
+
+
+new: true 
+    receiving back updated object
+
+nested document (subdocument) - adding data into nested array
+
+.populate()
+Pizza.find({})
+  .populate({
+    path: 'comments',
+    select: '-__v'
+  })
+  .then(dbPizzaData => res.json(dbPizzaData))
+
+select: '-__v'
+used the select option inside of populate(), so that we can tell Mongoose that we don't care about the __v field on comments either. The minus sign - in front of the field indicates that we don't want it to be returned. If we didn't have it, it would mean that it would return only the __v field.
+
+
+
+getter is typically a special type of function that takes the stored data you are looking to retrieve and modifies or formats it upon return
+
+
+if (!response.ok) {
+  throw new Error({ message: 'Something went wrong!' });
+}
+
+window.history.back();
+
+ .reduce() method to tally up the total of every comment with its replies. In its basic form, .reduce() takes two parameters, an accumulator and a currentValue. Here, the accumulator is total, and the currentValue is comment. As .reduce() walks through the array, it passes the accumulating total and the current value of comment into the function, with the return of the function revising the total for the next iteration through the array.
+
+ Like .map(), the array prototype method .reduce() executes a function on each element in an array. However, unlike .map(), it uses the result of each function execution for each successive computation as it goes through the array. This makes it a perfect candidate for getting a sum of multiple values.
+
+function calculateAverage(total, years, index, array) {
+  total += years;
+  return index === array.length-1 ? total/array.length: total
+}
+
+const average = developers.map(dev => dev.experience).reduce(calculateAverage);
+
+In this case, map grabs just the years of experience from each developer. Then .reduce() is used to continually add on to a value within the scope of the method known as the accumulator, then divide by the length of the entire array. The built-in .reduce() method is great for calculating a value based off of the accumulation of values in an array.
+
+trying to model the routes in a RESTful manner, so as a best practice we should include the ids of the parent resources in the endpoint. It's kind of like saying, "Go to this pizza, then look at this particular comment, then delete this one reply."
+
+
+A PWA, also known as a progressive web application, uses cutting-edge features of the web to deliver a user experience that resembles a native mobile app. These features include the ability to install the app on a home screen, activate push notifications, and provide an offline experience.
+
+
+In IndexedDB, the container that stores the data is called an object store
+We can't create an object store until the connection to the database is open, emitting an event that the request variable will be able to capture. 
+
+With Mongoose's required field, you can actually provide a custom error message. Simply use the following syntax, and the user will receive your custom message instead of the generic "required" message:
+
+pizzaName: {
+ type: String,
+ required: 'You need to provide a pizza name!',
+ trim: true
+},
+
+
+
+enum option stands for enumerable, a popular term in web development that refers to a set of data that can be iterated over—
+
+
+
+
+
+
+writing object methods
+    const dogObject = {
+  // this...
+  bark: function() {
+    console.log('Woof!');
+  },
+
+  // ... is the same as this
+  bark() {
+    console.log('Woof!');
+  }
+}
+
+
+    
+

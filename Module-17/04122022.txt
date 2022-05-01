@@ -1,0 +1,55 @@
+
+
+Big O is just the output from the computation
+    how runtime will scale as input size increases
+
+Want to be below O(n)
+
+
+digital signal processing - what powers electronic communication
+    - 
+
+
+add element to start of array - unshift()
+
+
+scope - pertains to the visibility of variables
+    - "see" that a variable is declared
+context - refers to the object to which a function belongs
+    - 
+
+
+JS - Global Execution Context
+    - All of the global code i.e. code which is not inside any function or object is executed inside the global execution context.
+    - abstract container by Js engine to hold info about global environment
+
+Functional Execution Context
+    - environment a function is executed in
+    - execution stack runs global execution first, then functional executions as they come up
+
+
+Closures
+The members of an object are all PUBLIC members. Any function can access, modify, or delete those members, or add new members. There are two main ways of putting members in a new object. In the constructor and in the prototype.
+
+PRIVATE members are made by the constructor. Ordinary vars and parameters of the constructor become the private members.
+
+A PRIVILEGED method is able to access the private variables and methods, and is itself accessible to the public methods and the outside. 
+
+This pattern of public, private, and privileged members is possible because JavaScript has CLOSURES, when an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned. 
+
+This is an extremely powerful property of the language! 
+
+
+closure - inner function with an outer function that allows inner variables to be private
+
+
+stack - only allow access to top element
+    an abstraction of how data can be arranged
+    lifo - last in first out
+    not natively supported in JavaScript
+    needs to have pop
+
+queues 
+    - only allow access to first element
+    - FIFO, first in, first out
+
